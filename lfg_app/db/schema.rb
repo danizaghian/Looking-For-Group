@@ -16,6 +16,16 @@ ActiveRecord::Schema.define(version: 20151118230139) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "game_genres", force: :cascade do |t|
+    t.integer  "game_id"
+    t.integer  "genre_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "game_genres", ["game_id"], name: "index_game_genres_on_game_id", using: :btree
+  add_index "game_genres", ["genre_id"], name: "index_game_genres_on_genre_id", using: :btree
+
   create_table "games", force: :cascade do |t|
     t.string   "name"
     t.integer  "min_players"
@@ -23,6 +33,12 @@ ActiveRecord::Schema.define(version: 20151118230139) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "max_players"
+  end
+
+  create_table "genres", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "group_users", force: :cascade do |t|
@@ -56,6 +72,8 @@ ActiveRecord::Schema.define(version: 20151118230139) do
     t.datetime "updated_at",  null: false
   end
 
+  add_foreign_key "game_genres", "games"
+  add_foreign_key "game_genres", "genres"
   add_foreign_key "group_users", "groups"
   add_foreign_key "group_users", "users"
 end

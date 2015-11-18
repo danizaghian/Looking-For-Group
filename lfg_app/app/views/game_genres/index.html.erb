@@ -1,0 +1,6 @@
+<h1><%= @genre.name %></h1>
+
+<% @games.each do |game| %>
+	<%= game.name %>
+	<%= game.description %>
+<% end %>
