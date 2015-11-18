@@ -11,8 +11,11 @@ class GroupsController < ApplicationController
 	end
 
 	def create
-		
-	end
+    group_params = params.require(:group).permit(:name, :city, :meet_date)
+    @group = Group.create(group_params)
+
+    redirect_to groups_path
+  end
 	
 	def edit
 	end
