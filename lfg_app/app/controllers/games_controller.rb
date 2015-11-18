@@ -2,18 +2,17 @@ class GamesController < ApplicationController
   def new
   	@games = Game.new
   end
-
+  def create
+  	game_params = params.require(:game).permit(:name, :min_players, :max_players, :description)
+  	@game = Game.create(game_params)
+  	redirect_to @game
+  end
   def index
   	@games = Game.all
   end
 
   def show
   	@game = Game.find(params[:id])
-  end
-  def create
-  	game_params = params.require(:game).permit(:name, :min_players, :max_players, :description)
-  	@game = Game.create(game_params)
-  	redirect_to @game
   end
   def edit 
   	@game = Game.find(params[:id])

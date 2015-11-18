@@ -1,0 +1,12 @@
+<%= form_for @group do |f| %>
+  <div>
+    <%= f.text_field :name, placeholder: "Name" %>
+  </div>
+  <div>
+    <%= f.text_field :city, placeholder: "City" %>
+  </div>
+  <div>
+    <%= f.date_field :meet_date, placeholder: "meet date" %>
+  </div>
+  <%= f.submit %>
+<% end %>
