@@ -1,5 +1,5 @@
 <h1>Games#index</h1>
-<% if @games == nil %>
+<% if @games.length == 0 %>
 	"NO GAMES WTF"
 <% else %>
 	<% @games.each do |game| %> <br>
