@@ -12,10 +12,14 @@ class UsersController < ApplicationController
     user_params = params.require(:user).permit(:username, :first_name, :last_name, :email, :city, :age, :description)
     # create a new user with those params
     user = User.create(user_params)
-    redirect_to users_path
+    redirect_to user
     # ^ same as redirect_to "/users"
   end
 
-  def show
-  end
+	def show
+	  # get the id parameter from the url
+	  id = params[:id]
+	  # find the user with that id and save to an instance variable
+	  @user = User.find(id)
+	end
 end
