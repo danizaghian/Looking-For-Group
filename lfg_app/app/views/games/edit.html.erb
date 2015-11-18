@@ -1,0 +1,7 @@
+<%= form_for @game do |f| %>
+	Name: <%= f.text_field :name %> <br>
+	Suggested number of players: <%= f.number_field :min_players %> - <%= f.number_field :max_players %> <br>
+	Description: <%= f.text_field :description %> <br>
+	<%= f.submit "Edit this shit" %>
+<% end %>
+	<%= button_to "Blow this fucker away", @game, method: :delete %>

@@ -1,0 +1,13 @@
+<h1>Games#index</h1>
+<% if @games == nil %>
+	"NO GAMES WTF"
+<% else %>
+	<% @games.each do |game| %> <br>
+		Name: <%= game.name %> <br>
+		Recommended number of player: <%= game.min_players %> - <%= game.max_players %>	<br>
+		Description: <%= game.description %> <br>
+	<% end %>
+<% end %>
+<br>
+
+<%= link_to "this is a link", new_game_path %>
