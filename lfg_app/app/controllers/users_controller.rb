@@ -8,27 +8,19 @@ class UsersController < ApplicationController
   end
 
   def create
-    # validate params and save them as a variable
     user_params = params.require(:user).permit(:username, :first_name, :last_name, :email, :city, :age, :description)
-    # create a new user with those params
     user = User.create(user_params)
     redirect_to user
-    # ^ same as redirect_to "/users"
   end
 
 	def show
-	  # get the id parameter from the url
 	  id = params[:id]
-	  # find the user with that id and save to an instance variable
 	  @user = User.find(id)
 	end
 
 	def edit
-      # save the id parameter to a variable
       id = params[:id]
-      # look up the user by id and save to an instance variable
       @user = User.find(id)
-      # render the edit form view -- it will have access to the @user instance variable
       render :edit
     end
 
@@ -38,5 +30,12 @@ class UsersController < ApplicationController
       updated_attributes = params.require(:user).permit(:username, :first_name, :last_name, :email, :city, :age, :description)
       user.update_attributes(updated_attributes)
       redirect_to user
+    end
+
+    def destroy
+      id = params[:id]
+      user = User.find(id)
+      user.destroy
+      redirect_to users_path
     end
 end
