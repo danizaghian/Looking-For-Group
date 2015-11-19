@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
 	has_many :group_users
 	has_many :groups, through: :group_users
+	has_many :user_genres
+	has_many :genres, through: :user_genres
 
 	has_secure_password
 
@@ -16,4 +18,7 @@ class User < ActiveRecord::Base
       @user = User.find_by({email: params[:email]})
       @user.try(:authenticate, params[:password])
     end
+
+	extend FriendlyId
+	friendly_id :username, use: :slugged 
 end

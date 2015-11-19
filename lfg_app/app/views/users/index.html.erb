@@ -2,10 +2,11 @@
 
     <div class="container">
 	    <div class="row">
-	    	<div class="one-half column">Username: <%= user.username %> </div>
-	    	<div class="one-half column">Description: <%=  user.description %> </div>
-	    	<div class=""> </div>
+	    	<div class="one-third column">Username: <%= user.username %> </div>
+	    	<div class="one-third column" > Full name: <%= user.first_name %> <%= user.last_name %> </div>
+	    	<div class="one-third column">Description: <%=  user.description %> </div>
 	    </div>
     </div>
 
 <% end %>
+	    	<a class="button">Create New User</a>
