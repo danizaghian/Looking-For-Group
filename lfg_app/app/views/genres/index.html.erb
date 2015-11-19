@@ -1,4 +1,4 @@
-<h1>Genres#index</h1>
+<h1>All Genres</h1>
 <ul>
 	<% @genres.each do |genre| %>
 		<li>
@@ -6,3 +6,5 @@
 		</li>
  	<% end %>
 </ul>
+
+<%= button_to "Create New Genre", new_genre_path, method: :get %>

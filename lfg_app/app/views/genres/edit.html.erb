@@ -1,5 +1,5 @@
 <%= form_for @genre do |f| %>
 	Name: <%= f.text_field :name %> <br>
-	<%= f.submit "Edit this shit" %>
+	<%= f.submit "Edit" %>
 <% end %>
-	<%= button_to "Blow this fucker away", @genre, method: :delete %>
+	<%= button_to "Delete", @genre, method: :delete %>

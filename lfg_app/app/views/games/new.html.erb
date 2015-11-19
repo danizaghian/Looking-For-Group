@@ -1,5 +1,3 @@
-<h1>Games#new page</h1>
-<p>Find me in app/views/games/new.html.erb</p>
 <%= form_for @games do |f| %>
 	Name: <%= f.text_field :name %> <br>
 	Suggested number of players: <%= f.number_field :min_players %> - <%= f.number_field :max_players %> <br>
@@ -7,5 +5,5 @@
 	<% @genres.each do |genre| %>
 	<input type="checkbox" name="<%=genre.name%>" value="<%=genre.name%>"  > <%=genre.name%> <br>
 	<% end %> 
-	<%= f.submit "Submit this shit" %>
+	<%= f.submit "Submit" %>
 <% end %>
