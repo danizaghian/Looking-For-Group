@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   end
   
   def create
-    user_params = params.require(:user).permit(:username, :first_name, :last_name, :email, :city, :age, :description, :password)
+    user_params = params.require(:user).permit(:username, :first_name, :last_name, :email, :city, :age, :description, :password, :avatar)
     @user = User.create(user_params)
     login(@user)
     user_genres = Genre.all 
@@ -25,7 +25,7 @@ class UsersController < ApplicationController
 	def show
 	  id = params[:id]
 	  @user = User.friendly.find(id)
-    @genres = @game.genres
+    @genres = @user.genres
 	end
 
 	def edit
