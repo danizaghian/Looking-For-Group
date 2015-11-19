@@ -21,10 +21,10 @@ game2 = Game.create(name: "Settlers of Catan", min_players: 2, max_players: 4, d
 game3 = Game.create(name: "Dungeons & Dragons", min_players: 3, max_players: 6, description: "Table top nerd-core goofiness")
 game4 = Game.create(name: "League of Legends", min_players: 1, max_players: 10, description: "Up your daily sodium intake")
 
-group1 = Group.create(name: "D&D WDI", city: 91041, meet_date: "2015-11-18 10:00:00", gm: 1)
-group2 = Group.create(name: "Halo LAN Party", city: 91041, meet_date: "2015-10-10 05:00:00", gm: 2)
-group3 = Group.create(name: "Catan Night", city: 91041, meet_date: "2015-08-08 06:00:00", gm: 3)
-group4 = Group.create(name: "LoLganza", city: 91041, meet_date: "2015-11-11 10:00:00", gm: 4)
+group1 = Group.create(name: "D&D WDI", city: 91041, description: "Web developers by day, adventurers by late afternoon!", meet_date: "2015-11-18 10:00:00", gm: 1)
+group2 = Group.create(name: "Halo LAN Party", city: 91041, description: "We all know people who play Halo are the WORST, let's put them all in a room together.", meet_date: "2015-10-10 05:00:00", gm: 2)
+group3 = Group.create(name: "Catan Night", city: 91041, description: "Divide and conquer.", meet_date: "2015-08-08 06:00:00", gm: 3)
+group4 = Group.create(name: "LoLganza", city: 91041, description: "Bronzies not welcome.", meet_date: "2015-11-11 10:00:00", gm: 4)
 
 game1.genres.push(genre1)
 game2.genres.push(genre3)
