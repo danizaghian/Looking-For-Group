@@ -2,3 +2,10 @@
 <%= @game.name %> <br>
 Recommended number of player: <%= @game.min_players %> - <%= @game.max_players %>	<br>
 Description: <%= @game.description %> <br>
+<ul>
+	<% @genres.each do |genre| %>
+		<li>
+		 <%= genre.name %> <br>
+		</li>
+ 	<% end %>
+</ul>

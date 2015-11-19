@@ -1,4 +1,8 @@
 <h1>Genres#index</h1>
- <% @genres.each do |genre| %>
- <%= genre.name %>
- <% end %>
+<ul>
+	<% @genres.each do |genre| %>
+		<li>
+		 <%= genre.name %> <br>
+		</li>
+ 	<% end %>
+</ul>
