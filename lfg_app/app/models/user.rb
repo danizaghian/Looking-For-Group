@@ -8,4 +8,6 @@ class User < ActiveRecord::Base
       @user = User.find_by({email: params[:email]})
       @user.try(:authenticate, params[:password])
     end
+	extend FriendlyId
+	friendly_id :title, use: :slugged 
 end

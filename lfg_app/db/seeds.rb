@@ -9,7 +9,7 @@
 user1 = User.create(username: "Wilbo", first_name: "Will", last_name: "Cauthen", email: "wtf@bbq.com", city: "91041", age: 25, description: "Dead sexy", password: "password")
 user2 = User.create(username: "Jamester", first_name: "Jamey", last_name: "Hollis", email: "jh@bbq.com", city: "91041", age: 20, description: "slightly less sexy", password: "password")
 user3 = User.create(username: "Asteryl", first_name: "Dani", last_name: "Zaghian", email: "dz@bbq.com", city: "91041", age: 24, description: "The most sexiest", password: "password")
-user4 = User.create(username: "Ryan", first_name: "Brian", last_name: "Gabot", email: "bg@bbq.com", city: "91041", age: 25, description: "The most sexist", password: "password")
+user4 = User.create(username: "Ryan", first_name: "Brian", last_name: "Gabot", email: "bg@bbq.com", city: "91041", age: 26, description: "The most sexist", password: "password")
 
 genre1 = Genre.create(name: "Science Fiction")
 genre2 = Genre.create(name: "MMO")
