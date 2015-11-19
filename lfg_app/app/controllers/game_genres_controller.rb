@@ -1,6 +1,6 @@
 class GameGenresController < ApplicationController
 
-	def index
+	def show
 		@genre = Genre.find([:genre_id])
 		@games = @genre.games
 	end
