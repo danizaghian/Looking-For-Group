@@ -4,5 +4,8 @@
 	Name: <%= f.text_field :name %> <br>
 	Suggested number of players: <%= f.number_field :min_players %> - <%= f.number_field :max_players %> <br>
 	Description: <%= f.text_field :description %> <br>
+	<% @genres.each do |genre| %>
+	<input type="checkbox" name="<%=genre.name%>" value="<%=genre.name%>"  > <%=genre.name%> <br>
+	<% end %> 
 	<%= f.submit "Submit this shit" %>
 <% end %>

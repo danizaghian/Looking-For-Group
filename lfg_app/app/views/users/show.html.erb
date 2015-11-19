@@ -2,5 +2,6 @@
     Username: <%= @user.username %> <br>
     Description: <%=  @user.description %>
 
+	<%= button_to "Log out",  logout_path, method: "destroy" %>
     <%= button_to "Delete", @user, method: :delete %>
 </div>

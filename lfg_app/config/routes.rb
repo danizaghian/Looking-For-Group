@@ -8,4 +8,11 @@ Rails.application.routes.draw do
 
   get "/genre/:genre_id/games", to: "game_genres#index", as: "genre_games"
 
+  get "/login", to: "sessions#new"
+
+  post "/sessions", to: "sessions#create"
+
+  post "/logout", to: "sessions#destroy"
+
+
 end
