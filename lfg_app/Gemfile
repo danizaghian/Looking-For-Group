@@ -30,6 +30,8 @@ gem 'bcrypt', '~> 3.1.7'
 # friendly id gem
 gem 'friendly_id'
 
+gem 'bootstrap-material-design'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
