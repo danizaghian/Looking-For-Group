@@ -4,20 +4,29 @@ class UsersController < ApplicationController
   end
 
   def new
-  	@user = User.new
-  end
-
-    def show
-     @user = User.friendly.find(params[:id])
-    render :show
+    @user = User.new
+    @genres = Genre.all
   end
   
   def create
     user_params = params.require(:user).permit(:username, :first_name, :last_name, :email, :city, :age, :description, :password)
     @user = User.create(user_params)
     login(@user)
+    user_genres = Genre.all 
+    user_genres.each do |genre|
+      if params[genre.name]
+        @user.genres.push(genre)
+      end
+    end
+    @user.save
     redirect_to @user
   end
+
+	def show
+	  id = params[:id]
+	  @user = User.friendly.find(id)
+    @genres = @game.genres
+	end
 
 	def edit
       id = params[:id]
