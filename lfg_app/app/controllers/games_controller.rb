@@ -21,7 +21,7 @@ class GamesController < ApplicationController
   end
 
   def show
-    @game = Game.find(params[:id])
+    @game = Game.friendly.find(params[:id])
     @genres = @game.genres
   end
   def edit 
