@@ -8,10 +8,15 @@ class UsersController < ApplicationController
   end
 
   def create
-    user_params = params.require(:user).permit(:username, :first_name, :last_name, :email, :city, :age, :description, :password)
-    @user = User.create(user_params)
-    login(@user)
-    redirect_to @user
+    user_params = params.require(:user).permit(:username, :first_name, :last_name, :email, :city, :age, :description, :password, :avatar)
+    @user = User.new(user_params)
+    if @user.save
+      login(@user)
+      redirect_to @user
+    else
+      p @user.errors
+      redirect_to "/users/new"
+    end
   end
 
 	def show
