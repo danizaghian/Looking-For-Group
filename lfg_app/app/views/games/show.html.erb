@@ -1,7 +1,7 @@
-<h1>Games#show</h1>
-<%= @game.name %> <br>
+<h2><%= @game.name %> </h2><br>
 Recommended number of player: <%= @game.min_players %> - <%= @game.max_players %>	<br>
-Description: <%= @game.description %> <br>
+Description: <%= @game.description %> <br><br>
+Genres:
 <ul>
 	<% @genres.each do |genre| %>
 		<li>

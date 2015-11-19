@@ -1,0 +1,9 @@
+Group Show
+
+<div>
+    Name: <%= @group.name %> <br>
+    Description: <%=  @group.description %><br>
+    Meet Date: <%= @group.meet_date %><br>
+
+	<%= link_to "All Groups",  groups_path, method: :get %>
+</div>

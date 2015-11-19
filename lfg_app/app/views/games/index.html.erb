@@ -1,13 +1,15 @@
-<h1>Games#index</h1>
-<% if @games.length == 0 %>
-	"NO GAMES WTF"
-<% else %>
+<h1>All Games</h1>
+
 	<% @games.each do |game| %> <br>
 		Name: <%= game.name %> <br>
 		Recommended number of player: <%= game.min_players %> - <%= game.max_players %>	<br>
 		Description: <%= game.description %> <br>
+		Genres:
+		<% game.genres.each do |genre| %>
+			<%= genre.name %>
+		<% end %><br>
 	<% end %>
-<% end %>
+
 <br>
 
-<%= link_to "this is a link", new_game_path %>
+<%= button_to "Create New Game", new_game_path, method: :get %>
