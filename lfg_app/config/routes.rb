@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   get "/users/:user_id/groups", to: "group_users#index", as: "user_groups"
 
-  get "/genre/:genre_id/games", to: "game_genres#index", as: "genre_games"
+  get "/genre/:genre_id/games", to: "game_genres#show", as: "genre_games"
 
   get "/login", to: "sessions#new"
 
