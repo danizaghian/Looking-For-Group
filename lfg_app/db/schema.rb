@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151119020345) do
+ActiveRecord::Schema.define(version: 20151119194226) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,7 +33,10 @@ ActiveRecord::Schema.define(version: 20151119020345) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "max_players"
+    t.string   "slug"
   end
+
+  add_index "games", ["slug"], name: "index_games_on_slug", unique: true, using: :btree
 
   create_table "genres", force: :cascade do |t|
     t.string   "name"
@@ -60,7 +63,10 @@ ActiveRecord::Schema.define(version: 20151119020345) do
     t.datetime "updated_at",  null: false
     t.text     "description"
     t.integer  "game_id"
+    t.string   "slug"
   end
+
+  add_index "groups", ["slug"], name: "index_groups_on_slug", unique: true, using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "username"
@@ -73,7 +79,10 @@ ActiveRecord::Schema.define(version: 20151119020345) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.string   "password_digest"
+    t.string   "slug"
   end
+
+  add_index "users", ["slug"], name: "index_users_on_slug", unique: true, using: :btree
 
   add_foreign_key "game_genres", "games"
   add_foreign_key "game_genres", "genres"

@@ -7,17 +7,17 @@ class UsersController < ApplicationController
   	@user = User.new
   end
 
+    def show
+     @user = User.friendly.find(params[:id])
+    render :show
+  end
+  
   def create
     user_params = params.require(:user).permit(:username, :first_name, :last_name, :email, :city, :age, :description)
     user = User.create(user_params)
     login(@user)
     redirect_to user
   end
-
-	def show
-	  id = params[:id]
-	  @user = User.find(id)
-	end
 
 	def edit
       id = params[:id]

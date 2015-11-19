@@ -9,7 +9,7 @@ class GroupsController < ApplicationController
 
 	def show
 		id = params[:id]
-		@group = Group.find(id)
+		@group = Group.friendly.find(id)
 	end
 
 	def create
