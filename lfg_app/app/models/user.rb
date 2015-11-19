@@ -9,5 +9,5 @@ class User < ActiveRecord::Base
       @user.try(:authenticate, params[:password])
     end
 	extend FriendlyId
-	friendly_id :title, use: :slugged 
+	friendly_id :username, use: :slugged 
 end
