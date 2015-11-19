@@ -38,5 +38,9 @@ group2.users.push(user2, user3, user4)
 group3.users.push(user1, user2, user4)
 group4.users.push(user1, user2, user3)
 
+game1.groups.push(group2)
+game2.groups.push(group3)
+game3.groups.push(group1)
+game4.groups.push(group4)
 
 
