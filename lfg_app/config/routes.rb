@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   #this shows a list of groups through a specific user
   get "/users/:user_id/groups", to: "group_users#index", as: "user_groups"
 
+
   #this shows a list of games through a specific selected genre
   get "/genre/:genre_id/games", to: "game_genres#show", as: "genre_games"
 
