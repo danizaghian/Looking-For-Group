@@ -7,3 +7,84 @@
 	<%= button_to "Log out",  logout_path, method: "destroy" %>
     <%= button_to "Delete", @user, method: :delete %>
 </div>
+
+<button class ="btn btn-info" data-toggle="modal" data-target="#edit-modal">Edit</button>
+
+<div id="edit-modal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+      </div>
+      <div class="modal-body">
+        <%= form_for @user, class: "form-horizontal" do |f| %>
+   			<fieldset>
+   				<legend>Update Form </legend>
+
+			<div class="form-group">
+			    <%= f.label :username , class: "col-lg-3 control-label" %>
+			    <div class="col-lg-9">
+			    	<%= f.text_field :username, class: "form-control mdl-textfield__input" %>
+			    </div>
+			</div><br><br>
+
+			<div class="form-group">
+			    <%= f.label :first_name , class: "col-lg-3 control-label" %>
+			    <div class="col-lg-9">
+			    	<%= f.text_field :first_name, class: "form-control" %>
+			    </div>
+			</div><br><br>
+
+			<div class="form-group">
+		    	<%= f.label :last_name , class: "col-lg-3 control-label" %>
+		    	<div class="col-lg-9">
+		    		<%= f.text_field :last_name, class: "form-control" %>
+		    	</div>
+		    </div><br><br>
+
+		    <div class="form-group">
+		    	<%= f.label :email , class: "col-lg-3 control-label" %>
+		    	<div class="col-lg-9">
+		    		<%= f.text_field :email, class: "form-control" %>
+		    	</div>
+		    </div><br><br>
+
+		    <div class="form-group">
+		    	<%= f.label :city , class: "col-lg-3 control-label" %>
+		    	<div class="col-lg-9">
+		    		<%= f.text_field :city, class: "form-control" %>
+		    	</div>
+		    </div><br><br>
+
+		    <div class="form-group">
+		    	<%= f.label :age , class: "col-lg-3 control-label" %>
+		    	<div class="col-lg-9">
+		    		<%= f.text_field :age, class: "form-control" %>
+		    	</div>
+		    </div><br><br>
+
+		    <div class="form-group">
+		    	<%= f.label :description , class: "col-lg-3 control-label" %>
+		    	<div class="col-lg-9">
+		    		<%= f.text_area :description, class: "form-control" %>
+		    	</div>
+		    </div><br><br><br>
+
+		    <div class="form-group">
+		    <%= f.label :avatar, class: "col-lg-3 control-label" %>
+		      <div class="col-lg-9">
+		        <%= f.file_field :avatar %>
+		      </div>
+		    </div>
+		    
+      </div>
+      <div class="modal-footer">
+
+        <%= f.submit "Update", class: "btn btn-primary" %>
+        </fieldset>
+		<% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+

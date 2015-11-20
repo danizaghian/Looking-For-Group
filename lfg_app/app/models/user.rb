@@ -7,8 +7,8 @@ class User < ActiveRecord::Base
 	has_secure_password
 
 	has_attached_file :avatar,
-                    :styles => { :medium => "150x150>", :thumb => "44x44#" },
-                    :default_url => "/images/:style/missing.png"
+                    :default_url => "/images/kench1.jpg",
+                    :styles => { :medium => "150x150>", :thumb => "44x44#" }
 
   	validates_attachment :avatar,
                        :content_type => { :content_type => ["image/jpeg", "image/gif", "image/png"] },

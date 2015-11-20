@@ -36,15 +36,15 @@ class UsersController < ApplicationController
 
     def update
       user_id = params[:id]
-      user = User.find(user_id)
-      updated_attributes = params.require(:user).permit(:username, :first_name, :last_name, :email, :city, :age, :description)
+      user = User.friendly.find(user_id)
+      updated_attributes = params.require(:user).permit(:username, :first_name, :last_name, :email, :city, :age, :description, :avatar)
       user.update_attributes(updated_attributes)
       redirect_to user
     end
 
     def destroy
       id = params[:id]
-      user = User.find(id)
+      user = User.friendly.find(id)
       user.destroy
       redirect_to users_path
     end
