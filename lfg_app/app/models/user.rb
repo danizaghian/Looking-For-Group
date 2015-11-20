@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
 
   validates :username, uniqueness: true
   validates :username, presence: true 
-
+  acts_as_messageable
 	has_secure_password
 
 	has_attached_file :avatar,
@@ -21,6 +21,20 @@ class User < ActiveRecord::Base
       @user = User.find_by({username: params[:username]})
       @user.try(:authenticate, params[:password])
     end
+
+
+  def name
+   return @username
+  end
+
+    def mailboxer_email(object)
+    #Check if an email should be sent for that object
+     #if true
+    return @email
+      #if false
+     #return nil
+end
+
 
 	extend FriendlyId
 	friendly_id :username, use: :slugged 

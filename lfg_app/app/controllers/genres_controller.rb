@@ -1,7 +1,4 @@
 class GenresController < ApplicationController
-  def new
-  	@genre = Genre.new
-  end
 
   def create
   	genre_params = params.require(:genre).permit(:name)
@@ -11,13 +8,10 @@ class GenresController < ApplicationController
 
   def index
   	@genres = Genre.all
+    @genre = Genre.new
   end
 
   def show
-  	@genre = Genre.friendly.find(params[:id])
-  end
-
-  def edit 
   	@genre = Genre.friendly.find(params[:id])
   end
 
