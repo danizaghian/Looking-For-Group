@@ -9,7 +9,9 @@
           <a class="mdl-navigation__link nav-link" href="/games">Games</a>
           <a class="mdl-navigation__link nav-link" href="/groups">Groups</a>
           <a class="mdl-navigation__link nav-link" href="/genres">Genres</a>
+          <% if @current_user != nil %>
           <a class="mdl-navigation__link nav-link" href="/logout">Log out</a>
+          <% end %>
         </nav>
       </div>
     </div>
