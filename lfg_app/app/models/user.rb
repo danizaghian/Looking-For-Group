@@ -4,6 +4,9 @@ class User < ActiveRecord::Base
 	has_many :user_genres
 	has_many :genres, through: :user_genres
 
+  validates :username, uniqueness: true
+  validates :username, presence: true 
+
 	has_secure_password
 
 	has_attached_file :avatar,
@@ -15,7 +18,7 @@ class User < ActiveRecord::Base
                        :size => { :in => 0..1000.kilobytes }
 
     def self.confirm(params)
-      @user = User.find_by({email: params[:email]})
+      @user = User.find_by({username: params[:username]})
       @user.try(:authenticate, params[:password])
     end
 
