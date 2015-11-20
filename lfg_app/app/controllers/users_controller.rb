@@ -51,4 +51,28 @@ class UsersController < ApplicationController
       user.destroy
       redirect_to users_path
     end
+
+    def send_message
+      id = params[:id]
+      @user = User.friendly.find(id)
+    end
+
+    def inbox
+      id=params[:user_id]
+      @user = User.friendly.find(id)
+    end
+
+    def sent_message
+      p @current_user
+      id = params[:id]
+      cur_id = params[:current]
+      @current_user = User.find(cur_id)
+      @user = User.friendly.find(id)
+      puts "our target user is"
+      p @user
+      puts "our current user is"
+      p @current_user
+      @current_user.send_message(@user, params[:content], params[:title])
+      redirect_to "/users/#{id}/send_message"
+    end
 end
