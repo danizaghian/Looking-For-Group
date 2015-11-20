@@ -1,9 +1,10 @@
 <div>
     Username: <%= @user.username %> <br>
     Description: <%=  @user.description %>
-<%= image_tag @user.avatar.url %>
-  <%= image_tag @user.avatar.url(:medium) %>
-  <%= image_tag @user.avatar.url(:thumb) %>
+	<%= image_tag @user.avatar.url %>
+	<%= image_tag @user.avatar.url(:large) %>
+    <%= image_tag @user.avatar.url(:medium) %>
+    <%= image_tag @user.avatar.url(:thumb) %>
 	<%= button_to "Log out",  logout_path, method: "destroy" %>
     <%= button_to "Delete", @user, method: :delete %>
 </div>
