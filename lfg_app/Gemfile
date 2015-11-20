@@ -32,6 +32,9 @@ gem 'friendly_id'
 
 gem 'bootstrap-material-design'
 
+# mailboxer for messaging
+gem 'mailboxer'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
