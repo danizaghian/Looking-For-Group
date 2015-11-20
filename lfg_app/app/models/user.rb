@@ -10,8 +10,8 @@ class User < ActiveRecord::Base
 	has_secure_password
 
 	has_attached_file :avatar,
-                    :styles => { :medium => "150x150>", :thumb => "44x44#" },
-                    :default_url => "/images/:style/missing.png"
+                    :styles => { :large => "400x400#", :medium => "200x200#", :thumb => "70x70#" }, 
+                    :default_url => "/images/kench1_:style.jpg"
 
   	validates_attachment :avatar,
                        :content_type => { :content_type => ["image/jpeg", "image/gif", "image/png"] },

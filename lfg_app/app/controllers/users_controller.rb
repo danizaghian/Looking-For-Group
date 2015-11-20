@@ -41,7 +41,7 @@ class UsersController < ApplicationController
     def update
       user_id = params[:id]
       user = User.friendly.find(user_id)
-      updated_attributes = params.require(:user).permit(:username, :first_name, :last_name, :email, :city, :age, :description)
+      updated_attributes = params.require(:user).permit(:username, :first_name, :last_name, :email, :city, :age, :description, :avatar)
       user.update_attributes(updated_attributes)
       redirect_to user
     end
