@@ -1,8 +1,7 @@
-.mdl-layout {
-	position: fixed;
+.mdl-layout__drawer {
+	margin-left: 250px;
 }
 
-.body {
-	margin-left: 300px;
-	padding-top: 50px;
+.page-container {
+	margin-left: 250px;
 }
