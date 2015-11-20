@@ -6,10 +6,10 @@
           <% if @current_user != nil %>
           <%= link_to "Profile", user_path(current_user), class: "mdl-navigation__link nav-link" %>
           <% end %>
-          <a class="mdl-navigation__link nav-link" href="/games">Games</a>
+          <a class="mdl-navigation__link nav-link-image" style="background-image: url('/assets/icon.png')" href="/games">Games</a>
           <a class="mdl-navigation__link nav-link" href="/groups">Groups</a>
           <a class="mdl-navigation__link nav-link" href="/genres">Genres</a>
           <a class="mdl-navigation__link nav-link" href="/logout">Log out</a>
         </nav>
       </div>
-    </div>
+    
