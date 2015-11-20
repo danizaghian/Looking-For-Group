@@ -16,16 +16,16 @@ class GroupsController < ApplicationController
     group_params = params.require(:group).permit(:name, :city, :description, :meet_date)
     @group = Group.create(group_params)
 
-    redirect_to groups_path
+    redirect_to @group
   end
 	
 	def edit
-		@group = Group.find(params[:id])
+		@group = Group.friendly.find(params[:id])
 	end
 
 	def update
 		group_id = params[:id]
-		group = Group.find(group_id)
+		group = Group.friendly.find(group_id)
 		updated_attributes = params.require(:group).permit(:name, :city, :description, :meet_date)
 		group.update_attributes(updated_attributes)
 		redirect_to group
