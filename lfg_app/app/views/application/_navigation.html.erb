@@ -3,8 +3,9 @@
         <span class="mdl-layout-title">Title</span>
         <nav class="mdl-navigation">
           <a class="mdl-navigation__link nav-link" href="/groups">Home</a>
-
+          <% if @current_user != nil %>
           <%= link_to "Profile", user_path(current_user), class: "mdl-navigation__link nav-link" %>
+          <% end %>
           <a class="mdl-navigation__link nav-link" href="/games">Games</a>
           <a class="mdl-navigation__link nav-link" href="/groups">Groups</a>
           <a class="mdl-navigation__link nav-link" href="/genres">Genres</a>
