@@ -1,4 +1,5 @@
 class GamesController < ApplicationController
+  
   def new
   	@games = Game.new
     @genres = Genre.all
