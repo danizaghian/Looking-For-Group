@@ -18,5 +18,4 @@ Rails.application.routes.draw do
 
   post "/logout", to: "sessions#destroy"
 
-
 end
