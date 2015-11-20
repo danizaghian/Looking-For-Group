@@ -8,3 +8,55 @@ Group Show
 
 	<%= link_to "All Groups",  groups_path, method: :get %>
 </div>
+
+<button class ="btn btn-info" data-toggle="modal" data-target="#edit-group-modal">Edit Group</button>
+
+<div id="edit-group-modal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+      </div>
+      <div class="modal-body">
+        <%= form_for @group, class: "form-horizontal" do |f| %>
+   			<fieldset>
+   				<legend>Update Group </legend>
+
+			<div class="form-group">
+			    <%= f.label :name , class: "col-lg-3 control-label" %>
+			    <div class="col-lg-9">
+			    	<%= f.text_field :name, class: "form-control mdl-textfield__input" %>
+			    </div>
+			</div><br><br>
+
+			<div class="form-group">
+			    <%= f.label :description , class: "col-lg-3 control-label" %>
+			    <div class="col-lg-9">
+			    	<%= f.text_field :description, class: "form-control" %>
+			    </div>
+			</div><br><br>
+
+			<div class="form-group">
+		    	<%= f.label :city , class: "col-lg-3 control-label" %>
+		    	<div class="col-lg-9">
+		    		<%= f.text_field :city, class: "form-control" %>
+		    	</div>
+		    </div><br><br>
+
+		    <div class="form-group">
+		    	<%= f.label :meet_date , class: "col-lg-3 control-label" %>
+		    	<div class="col-lg-9">
+		    		<%= f.date_field :meet_date, class: "form-control" %>
+		    	</div>
+		    </div><br><br>
+		    
+      </div>
+      <div class="modal-footer">
+
+        <%= f.submit "Update", class: "btn btn-primary" %>
+        </fieldset>
+		<% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
