@@ -5,3 +5,10 @@
 .page-container {
 	margin-left: 250px;
 }
+
+
+.img-bg {
+	padding: 20px;
+	background-repeat: no-repeat;
+	margin: 60px;
+}
