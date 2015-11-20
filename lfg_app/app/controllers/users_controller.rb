@@ -18,8 +18,12 @@ class UsersController < ApplicationController
         @user.genres.push(genre)
       end
     end
-    @user.save
+    if @user.save
+    session[:user_id] = @user.id
     redirect_to @user
+  else 
+    redirect_to new_user_path
+  end
   end
 
 	def show
@@ -30,7 +34,7 @@ class UsersController < ApplicationController
 
 	def edit
       id = params[:id]
-      @user = User.find(id)
+      @user = User.friendly.find(id)
       render :edit
     end
 
