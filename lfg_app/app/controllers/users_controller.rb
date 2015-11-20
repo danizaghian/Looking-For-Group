@@ -27,8 +27,7 @@ class UsersController < ApplicationController
   end
 
 	def show
-	  id = params[:id]
-	  @user = User.friendly.find(id)
+	  @user = User.friendly.find(params[:id])
     @genres = @user.genres
 	end
 

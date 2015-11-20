@@ -2,11 +2,13 @@
       <div class="mdl-layout__drawer">
         <span class="mdl-layout-title">Title</span>
         <nav class="mdl-navigation">
-          <a class="mdl-navigation__link nav-link" href="/">Home</a>
-          <a class="mdl-navigation__link nav-link" href="/users">My profile</a>
-          <a class="mdl-navigation__link nav-link" href="/games">My Games</a>
-          <a class="mdl-navigation__link nav-link" href="/groups">My Groups</a>
-          <a class="mdl-navigation__link nav-link" href="">Log out</a>
+          <a class="mdl-navigation__link nav-link" href="/groups">Home</a>
+
+          <%= link_to "Profile", user_path(current_user), class: "mdl-navigation__link nav-link" %>
+          <a class="mdl-navigation__link nav-link" href="/games">Games</a>
+          <a class="mdl-navigation__link nav-link" href="/groups">Groups</a>
+          <a class="mdl-navigation__link nav-link" href="/genres">Genres</a>
+          <a class="mdl-navigation__link nav-link" href="/logout">Log out</a>
         </nav>
       </div>
     </div>
