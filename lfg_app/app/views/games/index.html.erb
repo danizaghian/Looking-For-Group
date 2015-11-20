@@ -1,6 +1,6 @@
 
 <h1>All Games</h1>
-
+<!-- 
 	<% @games.each do |game| %> <br>
 		Name: <%= game.name %> <br>
 		Recommended number of player: <%= game.min_players %> - <%= game.max_players %>	<br>
@@ -11,4 +11,22 @@
 		<% end %><br>
 	<% end %>
 
-<br>
+<br> -->
+<% @games.each do |game| %>
+  <div class = "card-container">
+	<div class="demo-card-square mdl-card mdl-shadow--2dp">
+	  <div class="mdl-card__title mdl-card--expand">
+	    <h2 class="mdl-card__title-text"><%= game.name %></h2>
+	  </div>
+	  <div class="mdl-card__supporting-text">
+	   <%= game.description %> 
+	  </div>
+	  <div class="mdl-card__actions mdl-card--border">
+	    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+	      View Updates
+	    </a>
+	  </div>
+	</div>
+  </div>
+<% end %>
+
