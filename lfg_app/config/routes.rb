@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   resources :genres
   resources :games
   resources :users
-  resources :groups
+  resources :groups do
+      get :autocomplete_game_name, :on => :collection
+  end
   
   # temporary route to get messages working
   get "/users/:id/send_message", to:  "users#send_message"

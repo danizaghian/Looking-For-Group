@@ -12,7 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
 //= require turbolinks
+//= require autocomplete-rails
 //= require material-design.min
 //= require bootstrap-material-design
 //= require_tree .

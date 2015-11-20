@@ -1,4 +1,5 @@
 class GroupsController < ApplicationController
+	autocomplete :game, :name, :full => true
 	def index
 		@groups = Group.all
 	end
