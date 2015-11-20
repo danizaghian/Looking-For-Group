@@ -1,0 +1,10 @@
+<h1> Inbox!</h1>
+<ul>
+	<% @user.mailbox.inbox.each do |inbox| %>
+			<h4><%= inbox.receipts[0].message.subject %> </h4>
+			<p><%= inbox.receipts[0].message.body %> </p>
+			<% if @user == @current_user %>
+				<button> Reply </button>
+			<% end %>
+	<% end %>
+</ul>

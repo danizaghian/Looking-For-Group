@@ -1,0 +1,12 @@
+
+<% @groups.each do |group| %>
+  <div>
+    <h3><%= group.name %></h3>
+  </div>
+  Description: <%= group.description %><br>
+  Meet Date: <%= group.meet_date %>
+  <!-- adds game -->
+  <br>
+<% end %>
+
+<%= button_to "Create New Group", new_group_path, method: :get %>

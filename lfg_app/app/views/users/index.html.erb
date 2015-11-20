@@ -1,0 +1,14 @@
+
+
+<% @users.each do |user| %>
+
+    <div class="container">
+	    <div class="row">
+	    	<div class="one-third column">Username: <%= user.username %> </div>
+	    	<div class="one-third column" > Full name: <%= user.first_name %> <%= user.last_name %> </div>
+	    	<div class="one-third column">Description: <%=  user.description %> </div>
+	    </div>
+    </div>
+
+<% end %>
+	    	<button class="btn btn-flat btn-success">Create New User</button>
