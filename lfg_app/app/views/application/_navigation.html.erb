@@ -9,8 +9,7 @@
           <a class="mdl-navigation__link nav-link-image" href="/games">Games <!-- span class = "img-bg" style="background-image: url('/assets/icon.png')"></span> --></a>
           <a class="mdl-navigation__link nav-link" href="/groups">Groups</a>
           <a class="mdl-navigation__link nav-link" href="/genres">Genres</a>
-<!--           <a class="mdl-navigation__link nav-link" href="/logout">Log out</a>
- -->      <% if @current_user == nil %>
+         <% if @current_user == nil %>
           <%= link_to "Log In", login_path, class: "mdl-navigation__link nav-link" %>
           <% else %> 
           <%= link_to "Log out", logout_path, method: :post, class: " mdl-navigation__link nav-link" %>

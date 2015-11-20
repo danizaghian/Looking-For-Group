@@ -1,2 +1,36 @@
-
 <h1><%= @genre.name %></h1>
+
+<button class ="btn btn-info" data-toggle="modal" data-target="#edit-genre-modal">Edit Genre</button>
+
+<%= button_to "Delete Genre", @genre, class: "btn btn-primary", method: :delete %>
+
+
+<div id="edit-genre-modal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+      </div>
+      <div class="modal-body">
+        <%= form_for @genre, class: "form-horizontal" do |f| %>
+   			<fieldset>
+   				<legend>Edit Genre</legend>
+
+			<div class="form-group">
+			    <%= f.label :name , class: "col-lg-3 control-label" %>
+			    <div class="col-lg-9">
+			    	<%= f.text_field :name, class: "form-control mdl-textfield__input" %>
+			    </div>
+			</div><br><br>
+		    
+      </div>
+      <div class="modal-footer">
+
+        <%= f.submit "Edit", class: "btn btn-primary" %>
+        </fieldset>
+		<% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
