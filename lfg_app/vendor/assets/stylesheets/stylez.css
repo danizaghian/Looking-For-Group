@@ -46,3 +46,8 @@ div.jumbotron.groups {
 
 
 
+.img-bg {
+	padding: 20px;
+	background-repeat: no-repeat;
+	margin: 60px;
+}

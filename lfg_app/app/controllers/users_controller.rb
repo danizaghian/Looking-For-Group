@@ -46,10 +46,10 @@ class UsersController < ApplicationController
     end
 
     def destroy
-      id = params[:id]
-      user = User.friendly.find(id)
+      user = User.friendly.find(params[:id])
+      logout
       user.destroy
-      redirect_to users_path
+      redirect_to root_path
     end
 
     def send_message
