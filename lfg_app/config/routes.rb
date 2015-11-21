@@ -15,11 +15,15 @@ Rails.application.routes.draw do
   get "/users/:user_id/groups", to: "group_users#index", as: "user_groups"
 
 
+
   get "/users/:user_id/inbox", to: "users#inbox"
 
   #this shows a list of games through a specific selected genre
   get "/genre/:genre_id/games", to: "game_genres#show", as: "genre_games"
   get "/genre/:genre_id/users", to: "user_genres#show", as: "genre_users"
+
+
+  post "/games/:id/adduser", to: "games#adduser"
 
   get "/login", to: "sessions#new"
 
