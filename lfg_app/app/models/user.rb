@@ -3,7 +3,8 @@ class User < ActiveRecord::Base
 	has_many :groups, through: :group_users
 	has_many :user_genres
 	has_many :genres, through: :user_genres
-
+  has_many :user_games
+  has_many :games, through: :user_games
   validates :username, uniqueness: true
   validates :username, presence: true 
   acts_as_messageable
