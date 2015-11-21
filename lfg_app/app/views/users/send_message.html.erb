@@ -1,0 +1,16 @@
+send_message.html.erb
+
+<form name = "send-message" action = "send_message" method = "post">
+	<input type="text" name="title" placeholder="Title"> <br>
+	<input type="text" name="content" placeholder="content">
+	<input type="hidden" name="current" value = "<%= @current_user.id%>">
+	<input type="submit" role="button" value="Submit this shit" >
+</form>
+
+
+ <% if @current_user == nil %>
+          <%= link_to "Log In", login_path, class: "mdl-navigation__link nav-link" %>
+          <% else %> 
+          <%= link_to "Log out", logout_path, method: :post, class: " mdl-navigation__link nav-link" %>
+          <%= @current_user.username %>
+          <% end %>
