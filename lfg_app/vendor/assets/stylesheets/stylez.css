@@ -32,6 +32,16 @@
 	margin: 100px;
 }
 
+div.jumbotron {
+	height: 250px;
+	font-size: 90px;
+	color: #ecf0f1;
+}
+
+div.jumbotron.groups {
+	background-color: #8e44ad;
+}
+
 
 
 

@@ -1,4 +1,6 @@
-
+<div class="jumbotron groups">
+  GROUPS
+</div>
 
 <a href= "/groups/new"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--fab mdl-button--mini-fab">+
 </button></a> Create New<br>
@@ -12,10 +14,7 @@
 
 	  <div class="mdl-card__supporting-text">
 	   For --  
-	   <%= Game.find(group.game_id).name %> 
-	  </div>
-
-	  <div class="mdl-card__supporting-text">
+	   <%= Game.find(group.game_id).name %> <br>
 	   <%= group.meet_date.to_formatted_s(:short) %>
 	  </div>
 	
