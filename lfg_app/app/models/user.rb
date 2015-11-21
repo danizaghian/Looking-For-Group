@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-	has_many :group_users
+	has_many :group_users, dependent: :destroy
 	has_many :groups, through: :group_users
 	has_many :user_genres
 	has_many :genres, through: :user_genres
