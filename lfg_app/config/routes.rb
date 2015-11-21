@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root to: "welcome#index"
+  get "/about", to: "welcome#show"
 
   resources :genres
   resources :games

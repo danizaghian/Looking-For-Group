@@ -21,6 +21,16 @@
   background: url('../assets/demos/dog.png') bottom right 15% no-repeat #46B6AC;
 }
 
+#welcomeButton {
+	font-size: 25px;
+	color: #fff;
+	background-color: #46B6AC;
+	text-align: justify;
+	width: 600px;
+	padding: 30px;
+	margin: 100px;
+}
+
 
 
 
