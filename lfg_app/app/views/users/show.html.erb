@@ -7,7 +7,7 @@
     <%= button_to "Delete", @user, method: :delete %>
 </div>
 
-<form name = "send-message" action = "send_message" method = "post">
+<form name = "send-message" action = "/users/<%=@user.id%>/send_message" method = "post">
 	<input type="text" name="title" placeholder="Title"> <br>
 	<input type="text" name="content" placeholder="content">
 	<input type="hidden" name="current" value = "<%= @current_user.id%>">

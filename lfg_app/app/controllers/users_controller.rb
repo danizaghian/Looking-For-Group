@@ -73,6 +73,6 @@ class UsersController < ApplicationController
       puts "our current user is"
       p @current_user
       @current_user.send_message(@user, params[:content], params[:title])
-      redirect_to "/users/#{id}/send_message"
+      redirect_to @user
     end
 end
