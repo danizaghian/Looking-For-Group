@@ -1,17 +1,6 @@
 
 <h1>All Games</h1>
-<!-- 
-	<% @games.each do |game| %> <br>
-		Name: <%= game.name %> <br>
-		Recommended number of player: <%= game.min_players %> - <%= game.max_players %>	<br>
-		Description: <%= game.description %> <br>
-		Genres:
-		<% game.genres.each do |genre| %>
-			<%= genre.name %>
-		<% end %><br>
-	<% end %>
 
-<br> -->
 <% @games.each do |game| %>
   <div class = "card-container">
 	<div class="demo-card-square mdl-card mdl-shadow--2dp">
