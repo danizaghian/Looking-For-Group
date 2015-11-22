@@ -41,7 +41,7 @@
 }
 
 div.jumbotron {
-	height: 200px;
+	height: 150px;
 	color: #ecf0f1;
 	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 
@@ -59,14 +59,16 @@ div.jumbotron.games {
 	background-color: #e74c3c;
 }
 
+
 .jumbotron-text {
-	margin-top:50px;
+	margin-top:20px;
 	font-size: 90px;
 }
 
+/*jumbotron fab*/
 div.jumbotron button {
 	position: absolute;
-	top: 199px;
+	top: 149px;
     right: 50px;
     background: #64ffda !important;
     color: white;
@@ -74,9 +76,10 @@ div.jumbotron button {
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
+/*back to top button*/
 a.btt {
 	position: fixed;
-	bottom: 0px;
+	bottom: 5px;
 	right: 40px;
 	width: 130px;
 }

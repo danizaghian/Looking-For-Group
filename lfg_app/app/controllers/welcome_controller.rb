@@ -1,6 +1,11 @@
 class WelcomeController < ApplicationController
 	def index
-		render :welcome
+		if current_user == nil
+			render :welcome
+		else
+			redirect_to "/home"
+		end
+
 	end
 	def show
 		render :about
