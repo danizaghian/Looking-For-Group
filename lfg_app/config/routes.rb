@@ -14,6 +14,9 @@ Rails.application.routes.draw do
   #this shows a list of groups through a specific user
   get "/users/:user_id/groups", to: "group_users#index", as: "user_groups"
 
+  post "/groups/:group_id/join", to: "groups#join"
+  post "/groups/:group_id/leave", to: "groups#leave"
+
 
 
   get "/users/:user_id/inbox", to: "users#inbox"

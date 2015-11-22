@@ -13,6 +13,18 @@ class GroupsController < ApplicationController
 		@group = Group.friendly.find(id)
 	end
 
+	def join
+		@group = Group.friendly.find(params[:group_id])
+		@group.users << User.friendly.find(params[:currentuser])
+		redirect_to @group
+	end
+
+	def leave
+		@group = Group.friendly.find(params[:group_id])
+		@group.users.delete(User.friendly.find(params[:currentuser]))
+		redirect_to @group
+	end
+
 	def create
     group_params = params.require(:group).permit(:name, :city, :description, :meet_date)
     @group = Group.create(group_params)

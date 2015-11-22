@@ -9,7 +9,19 @@ Group Show
 	<%= link_to "All Groups",  groups_path, method: :get %>
 </div>
 
-<button class ="btn btn-info" data-toggle="modal" data-target="#edit-group-modal">Edit Group</button>
+<% if @group.gm == @current_user.id %>
+	<button class ="btn btn-info" data-toggle="modal" data-target="#edit-group-modal">Edit Group</button>
+<% elsif @group.users.include? @current_user %>
+	<form method="POST" action="/groups/<%=@group.id%>/leave">
+		<input type="hidden" name = "currentuser" value="<%=@current_user.id%>">
+		<input type="submit" class = "btn" value="Leave Group">
+	</form>
+<% else %>
+	<form method="POST" action="/groups/<%=@group.id%>/join">
+		<input type="hidden" name = "currentuser" value="<%=@current_user.id%>">
+		<input type="submit" class = "btn" value="Join Group">
+	</form>
+<% end %>
 
 <div id="edit-group-modal" class="modal fade">
   <div class="modal-dialog">
