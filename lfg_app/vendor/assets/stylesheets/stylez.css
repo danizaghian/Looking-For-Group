@@ -39,7 +39,6 @@
 
 div.jumbotron {
 	height: 200px;
-	font-size: 90px;
 	color: #ecf0f1;
 	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 
@@ -52,10 +51,25 @@ div.jumbotron.groups {
 div.jumbotron.genres {
 	background-color: #3498db;
 }
-.jumbotron-text {
-	margin-top:50px;
+
+div.jumbotron.games {
+	background-color: #e74c3c;
 }
 
+.jumbotron-text {
+	margin-top:50px;
+	font-size: 90px;
+}
+
+div.jumbotron button {
+	position: absolute;
+	top: 199px;
+    right: 50px;
+    background: #64ffda !important;
+    color: white;
+    transform: translate(0px, -28px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
 
 
 
