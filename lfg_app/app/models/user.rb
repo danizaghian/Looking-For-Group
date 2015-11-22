@@ -7,6 +7,9 @@ class User < ActiveRecord::Base
   has_many :games, through: :user_games
   validates :username, uniqueness: true
   validates :username, presence: true 
+  validates :email, uniqueness: true
+  validates :email, presence: true 
+  validates :city, length: { is: 5 }
   acts_as_messageable
 	has_secure_password
 
