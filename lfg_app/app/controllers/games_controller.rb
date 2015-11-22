@@ -26,11 +26,11 @@ class GamesController < ApplicationController
     @genres = @game.genres
   end
   def edit 
-    @game = Game.find(params[:id])
+    @game = Game.friendly.find(params[:id])
   end
   def update
   	game_params = params.require(:game).permit(:name, :min_players, :max_players, :description)
-  	@game = Game.find(params[:id])
+  	@game = Game.friendly.find(params[:id])
   	@game.update_attributes(game_params)
   	redirect_to @game
   end
