@@ -1,5 +1,8 @@
 .mdl-layout__drawer {
 	margin-left: 250px;
+	position: fixed;
+	bottom: 0px;
+	top: 0px;
 }
 
 .page-container {
