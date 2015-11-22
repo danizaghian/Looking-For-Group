@@ -1,6 +1,13 @@
       
       <div class="mdl-layout__drawer">
-        <span class="mdl-layout-title">Title</span>
+        <span class="mdl-layout-title">
+        <% if current_user != nil %> 
+        <%= current_user.username %> <br>
+        <%= image_tag @user.avatar.url(:large, :class=> "avatar"), width: 150, heighth: 150 %>
+        <% else %>
+        Title
+        <% end %>
+        </span>
         <nav class="mdl-navigation">
           <a class="mdl-navigation__link nav-link" href="/groups">Home</a>
           <% if current_user != nil %>

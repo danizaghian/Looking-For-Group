@@ -92,3 +92,8 @@ a.btt {
 	background-repeat: no-repeat;
 	margin: 60px;
 }
+.avatar {
+	width: 125px;
+	height: 125px;
+	border-radius: 50px;
+}
