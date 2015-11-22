@@ -16,7 +16,7 @@
 <button class ="btn btn-info" data-toggle="modal" data-target="#message-modal">Message</button>
 
 <button class ="btn btn-info" data-toggle="modal" data-target="#edit-modal">Edit</button>
-
+<%= form_for @user, class: "form-horizontal" do |f| %>
 <div id="edit-modal" class="modal fade">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -24,7 +24,7 @@
       <button class="button" class="close" data-dismiss="modal">&times;</button>
       </div>
       <div class="modal-body">
-        <%= form_for @user, class: "form-horizontal" do |f| %>
+        
    			<fieldset>
    				<legend>Update Form </legend>
 
