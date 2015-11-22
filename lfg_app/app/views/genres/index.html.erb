@@ -1,8 +1,6 @@
 <a name="top"></a>
 <div class="jumbotron genres">
   <div class = "jumbotron-text">GENRES</div>
-  <button class="mdl-button  mdl-button--fab" data-toggle="modal" data-target="#new-genre-modal">+
-</button></a>
 </div>
 
 
@@ -23,34 +21,6 @@
 <% end %>
 
 
-
-<div id="new-genre-modal" class="modal fade">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-      </div>
-      <div class="modal-body">
-        <%= form_for @genre, class: "form-horizontal" do |f| %>
-   			<fieldset>
-   				<legend>New Genre</legend>
-
-			<div class="form-group">
-			    <%= f.label :name , class: "col-lg-3 control-label" %>
-			    <div class="col-lg-9">
-			    	<%= f.text_field :name, class: "form-control mdl-textfield__input" %>
-			    </div>
-			</div><br><br>
-		    
-      </div>
-      <div class="modal-footer">
-
-        <%= f.submit "Create", class: "btn btn-primary" %>
-        </fieldset>
-		<% end %>
-      </div>
-    </div>
-  </div>
-</div>
 
 <a href="#top" class="btt mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
 	Back to Top
