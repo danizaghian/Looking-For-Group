@@ -9,6 +9,10 @@ Group Show
 	<%= link_to "All Groups",  groups_path, method: :get %>
 </div>
 
+ <%= image_tag @user.avatar.url %>
+  <%= image_tag @user.avatar.url(:medium) %>
+  <%= image_tag @user.avatar.url(:thumb) %>
+  
 <% if @group.gm == @current_user.id %>
 	<button class ="btn btn-info" data-toggle="modal" data-target="#edit-group-modal">Edit Group</button>
 <% elsif @group.users.include? @current_user %>
