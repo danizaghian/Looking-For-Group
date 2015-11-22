@@ -1,13 +1,4 @@
-.mdl-layout__drawer {
-	margin-left: 250px;
-	position: fixed;
-	bottom: 0px;
-	top: 0px;
-}
 
-.page-container {
-	margin-left: 240px;
-}
 
 .card-container {
 	display: inline-block;
@@ -67,9 +58,9 @@ div.jumbotron.games {
 
 /*jumbotron fab*/
 div.jumbotron button {
-	position: absolute;
-	top: 149px;
+	top: -10px;
     right: 50px;
+    float: right;
     background: #64ffda !important;
     color: white;
     transform: translate(0px, -28px);
@@ -84,7 +75,10 @@ a.btt {
 	width: 130px;
 }
 
-
+.navatar img {
+	margin-left: 59px;
+	border-radius: 200px;
+}
 
 
 .img-bg {
