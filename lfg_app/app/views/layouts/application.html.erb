@@ -9,14 +9,40 @@
 	  <%= csrf_meta_tags %>
 	</head>
 	<body>
-		<%= render "navigation" %>
-		
-		<div class="page-container">
-
-		 <%= bootstrap_flash %>
-			<%= yield %>
+		<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
+		  <div class="demo-drawer mdl-color--blue-gray-900 mdl-color-text--blue-grey-50 is-visible mdl-layout__drawer">
+		    <header class="demo-drawer-header">
+		      <% if current_user %>
+		        <span class="mdl-layout-title"><%=current_user.username%></span>
+		        <div class="navatar"><%= image_tag current_user.avatar.url(:thumb) %></div>
+		      <% else %>
+		        <span class="mdl-layout-title">Title</span>
+		      <% end %>
+		    </header>
+			<nav class="demo-navigation mdl-color--blue-gray-800 mdl-navigation">
+		      <a class="mdl-navigation__link nav-link" href="/groups">Home</a>
+		      <% if current_user != nil %>
+		      <%= link_to "Profile", user_path(current_user), class: "mdl-navigation__link nav-link" %>
+		      <% end %>
+		      <a class="mdl-navigation__link nav-link-image" href="/games">Games <!-- span class = "img-bg" style="background-image: url('/assets/icon.png')"></span> --></a>
+		      <a class="mdl-navigation__link nav-link" href="/groups">Groups</a>
+		      <a class="mdl-navigation__link nav-link" href="/genres">Genres</a>
+		       <a class="mdl-navigation__link nav-link" href="/about">About</a>
+		     <% if @current_user == nil %>
+		      <%= link_to "Log In", login_path, class: "mdl-navigation__link nav-link" %>
+		      <% else %> 
+		      <%= link_to "Log out", logout_path, method: :post, class: " mdl-navigation__link nav-link" %>
+		      <% end%>
+		    </nav>
+		  </div>
+		  <main class="mdl-layout__content">
+		    <div class="page-content">
+		    	<%= yield %>
+		  </main>
 		</div>
+
 		
 
 	</body>
 </html>
+

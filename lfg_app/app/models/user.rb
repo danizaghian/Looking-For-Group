@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
 	has_secure_password
 
 	has_attached_file :avatar,
-                    :styles => { :large => "400x400#", :medium => "200x200#", :thumb => "70x70#" }, 
+                    :styles => { :large => "400x400#", :medium => "200x200#", :thumb => "125x125#" }, 
                     :default_url => "/images/kench1_:style.jpg"
 
   	validates_attachment :avatar,
