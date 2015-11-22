@@ -1,4 +1,5 @@
 class GroupsController < ApplicationController
+
 	def index
 		@groups = Group.all
 	end
@@ -12,11 +13,31 @@ class GroupsController < ApplicationController
 		@group = Group.friendly.find(id)
 	end
 
+	def join
+		@group = Group.friendly.find(params[:group_id])
+		@group.users << User.friendly.find(params[:currentuser])
+		redirect_to @group
+	end
+
+	def leave
+		@group = Group.friendly.find(params[:group_id])
+		@group.users.delete(User.friendly.find(params[:currentuser]))
+		redirect_to @group
+	end
+
 	def create
     group_params = params.require(:group).permit(:name, :city, :description, :meet_date)
-    @group = Group.create(group_params)
 
+    	# group_id = params[:id]
+    	# group = Group.friendly.find(group_id)
+      # if current_user.events.include? group
+      if current_user
+    @group = Group.create(group_params)
     redirect_to @group
+   else
+   	flash[:error] = "You need to be logged in to do that"
+  	redirect_to new_group_path
+  	end
   end
 	
 	def edit
@@ -32,6 +53,10 @@ class GroupsController < ApplicationController
 	end
 	
 	def destroy
+		 group = Group.friendly.find(params[:id])
+      # logout
+      group.destroy
+      redirect_to groups_path
 	end
 
 end

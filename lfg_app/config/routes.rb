@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root to: "welcome#index"
+  get "/about", to: "welcome#show"
 
   resources :genres
   resources :games
@@ -13,12 +14,20 @@ Rails.application.routes.draw do
   #this shows a list of groups through a specific user
   get "/users/:user_id/groups", to: "group_users#index", as: "user_groups"
 
+  post "/groups/:group_id/join", to: "groups#join"
+  post "/groups/:group_id/leave", to: "groups#leave"
+
+
 
   get "/users/:user_id/inbox", to: "users#inbox"
 
   #this shows a list of games through a specific selected genre
-  get "/genre/:genre_id/games", to: "game_genres#show", as: "genre_games"
-  get "/genre/:genre_id/users", to: "user_genres#show", as: "genre_users"
+  get "/genres/:genre_id/games", to: "game_genres#show", as: "genre_games"
+
+  get "/home", to: "user_genres#show", as: "mygroups"
+
+
+  post "/games/:id/adduser", to: "games#adduser"
 
   get "/login", to: "sessions#new"
 

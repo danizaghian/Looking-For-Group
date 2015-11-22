@@ -22,6 +22,7 @@ class UsersController < ApplicationController
     session[:user_id] = @user.id
     redirect_to @user
   else 
+    flash[:error] = @user.errors.full_messages
     redirect_to new_user_path
   end
   end
@@ -46,10 +47,10 @@ class UsersController < ApplicationController
     end
 
     def destroy
-      id = params[:id]
-      user = User.friendly.find(id)
+      user = User.friendly.find(params[:id])
+      logout
       user.destroy
-      redirect_to users_path
+      redirect_to root_path
     end
 
     def send_message
@@ -73,6 +74,6 @@ class UsersController < ApplicationController
       puts "our current user is"
       p @current_user
       @current_user.send_message(@user, params[:content], params[:title])
-      redirect_to "/users/#{id}/send_message"
+      redirect_to @user
     end
 end

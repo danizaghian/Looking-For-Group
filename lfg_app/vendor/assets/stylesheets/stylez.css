@@ -1,10 +1,3 @@
-.mdl-layout__drawer {
-	margin-left: 250px;
-}
-
-.page-container {
-	margin-left: 250px;
-}
 
 .card-container {
 	display: inline-block;
@@ -14,12 +7,81 @@
   width: 320px;
   height: 320px;
   margin: 30px;
-
+  transition: all 0.2s ease-in-out;
 }
+
+.demo-card-square.mdl-card:hover {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+
 .demo-card-square > .mdl-card__title {
   color: #fff;
-  background: url('../assets/demos/dog.png') bottom right 15% no-repeat #46B6AC;
+  background: url('') bottom right 15% no-repeat #46B6AC;
+}
+
+#welcomeButton {
+	font-size: 25px;
+	color: #fff;
+	background-color: #46B6AC;
+	text-align: justify;
+	width: 600px;
+	padding: 30px;
+	margin: 100px;
+}
+
+div.jumbotron {
+	height: 150px;
+	color: #ecf0f1;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	z-index: -1;
+}
+
+div.jumbotron.groups {
+	background-color: #8e44ad;
+}
+
+div.jumbotron.genres {
+	background-color: #3498db;
+}
+
+div.jumbotron.games {
+	background-color: #e74c3c;
 }
 
 
+.jumbotron-text {
+	margin-top:20px;
+	font-size: 90px;
+}
 
+/*jumbotron fab*/
+div.jumbotron button {
+	top: -10px;
+    right: 50px;
+    float: right;
+    background: #64ffda !important;
+    color: white;
+    transform: translate(0px, -28px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+/*back to top button*/
+a.btt {
+	position: fixed;
+	bottom: 5px;
+	right: 40px;
+	width: 130px;
+}
+
+.navatar img {
+	margin-left: 59px;
+	border-radius: 200px;
+}
+
+
+.img-bg {
+	padding: 20px;
+	background-repeat: no-repeat;
+	margin: 60px;
+}
