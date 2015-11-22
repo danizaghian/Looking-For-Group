@@ -1,8 +1,10 @@
+<a name="top"></a>
+<div class="jumbotron genres">
+  <div class = "jumbotron-text">GENRES</div>
+  <button class="mdl-button  mdl-button--fab" data-toggle="modal" data-target="#new-genre-modal">+
+</button></a>
+</div>
 
-<h1>All Genres</h1> 
-
-<button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--fab mdl-button--mini-fab" data-toggle="modal" data-target="#new-genre-modal">+
-</button> Create New<br>
 
 <% @genres.each do |genre| %>
 	<div class = "card-container">
@@ -49,6 +51,10 @@
     </div>
   </div>
 </div>
+
+<a href="#top" class="btt mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+	Back to Top
+<i class="material-icons">expand_less</i></a>
 
 
 

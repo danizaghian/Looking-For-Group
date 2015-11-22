@@ -1,4 +1,5 @@
 class GroupsController < ApplicationController
+
 	def index
 		@groups = Group.all
 	end
@@ -10,6 +11,18 @@ class GroupsController < ApplicationController
 	def show
 		id = params[:id]
 		@group = Group.friendly.find(id)
+	end
+
+	def join
+		@group = Group.friendly.find(params[:group_id])
+		@group.users << User.friendly.find(params[:currentuser])
+		redirect_to @group
+	end
+
+	def leave
+		@group = Group.friendly.find(params[:group_id])
+		@group.users.delete(User.friendly.find(params[:currentuser]))
+		redirect_to @group
 	end
 
 	def create
