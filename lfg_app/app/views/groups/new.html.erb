@@ -1,13 +1,13 @@
 
 <%= form_for @group do |f| %>
   <div>
-    <%= f.text_field :name, placeholder: "Name" %>
+    <%= f.text_field :name, placeholder: "Name", maxlength: 30%>
   </div>
   <div>
-    <%= f.text_area :description, placeholder: "Description" %>
+    <%= f.text_area :description, placeholder: "Description", maxlength: 120 %>
   </div>
   <div>
-    <%= f.text_field :city, placeholder: "City" %>
+    <%= f.text_field :city, placeholder: "Zipcode", maxlength: 6, size: 8 %>
   </div>
   <div>
     <%= f.date_field :meet_date, placeholder: "meet date" %>
