@@ -1,17 +1,8 @@
+<a name="top"></a>
+<div class ="jumbotron games">
+	<div class = "jumbotron-text">GAMES</div>
+</div>
 
-<h1>All Games</h1>
-<!-- 
-	<% @games.each do |game| %> <br>
-		Name: <%= game.name %> <br>
-		Recommended number of player: <%= game.min_players %> - <%= game.max_players %>	<br>
-		Description: <%= game.description %> <br>
-		Genres:
-		<% game.genres.each do |genre| %>
-			<%= genre.name %>
-		<% end %><br>
-	<% end %>
-
-<br> -->
 <% @games.each do |game| %>
   <div class = "card-container">
 	<div class="demo-card-square mdl-card mdl-shadow--2dp">
@@ -25,12 +16,10 @@
 	   <% length = game.genres.length %>
 	   <% game.genres.each do |genre| %>
 			<%= link_to genre.name, genre_path(genre.slug)%><% i+= 1%><% if i < (length) %>,<% end %>
-		<% end %>  
+		<% end %>  <br>
+	  <%= game.description %> 
 	  </div>
 
-	  <div class="mdl-card__supporting-text">
-	   <%= game.description %> 
-	  </div>
 	  <div class="mdl-card__actions mdl-card--border">
 	    <a href = "<%= game_path(game.slug)%>" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
 	      View Game
@@ -39,4 +28,8 @@
 	</div>
   </div>
 <% end %>
+
+<a href="#top" class="btt mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+	Back to Top
+<i class="material-icons">expand_less</i></a>
 
