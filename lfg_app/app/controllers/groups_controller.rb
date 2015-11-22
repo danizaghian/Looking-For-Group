@@ -15,15 +15,16 @@ class GroupsController < ApplicationController
 	def create
     group_params = params.require(:group).permit(:name, :city, :description, :meet_date)
 
-    	group_id = params[:id]
+    	# group_id = params[:id]
     	# group = Group.friendly.find(group_id)
       # if current_user.events.include? group
+      if current_user
     @group = Group.create(group_params)
     redirect_to @group
-  # else
-  # 	flash[:error] = "You need to be logged in to do that"
-  # 	redirect_to new_group_path(group_id)
-  # end
+   else
+   	flash[:error] = "You need to be logged in to do that"
+  	redirect_to new_group_path
+  	end
   end
 	
 	def edit
