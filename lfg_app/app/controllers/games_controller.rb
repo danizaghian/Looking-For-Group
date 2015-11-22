@@ -39,4 +39,15 @@ class GamesController < ApplicationController
   	@game.destroy
   	redirect_to "/games"
   end
+
+  def adduser
+    @game = Game.find(params[:id])
+    if @current_user.games.include?@game
+      p "user already liked game"
+    else 
+      @current_user.games.push(@game)
+    end
+    # there exists an adduser view because rails broke when there wasn't a redirect
+    #but this is only accessed via ajax request so we never actually need to reload the page
+  end
 end
