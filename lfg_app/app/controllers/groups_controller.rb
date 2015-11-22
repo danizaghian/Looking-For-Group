@@ -39,6 +39,10 @@ class GroupsController < ApplicationController
 	end
 	
 	def destroy
+		 group = Group.friendly.find(params[:id])
+      # logout
+      group.destroy
+      redirect_to root_path
 	end
 
 end
