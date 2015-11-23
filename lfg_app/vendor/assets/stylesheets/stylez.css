@@ -112,6 +112,10 @@ a.btt {
 	border-radius: 200px;
 }
 
+.profile-avatar img {
+	border-radius: 15px;
+}
+
 #sidebar {
 	background-color: #ecf0f1;
 	color: #757575;
