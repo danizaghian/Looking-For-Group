@@ -17,7 +17,7 @@
 							<h3>Games:</h3>
 							<ul>
 								<% @user.games.each do |game| %>
-									<li> <%= game.name %></li>
+									<li> <a href= "<%=game_path(game.slug)%>"><%= game.name %></a></li>
 								<% end %>
 							</ul>
 						</div>
@@ -25,7 +25,7 @@
 							<h3>Groups:</h3>
 							<ul>
 								<% @user.groups.each do |group| %>
-									<li> <%= group.name %></li>
+									<li><a href= "<%=group_path(group.slug)%>"><%= group.name %></a></li>
 								<% end %>
 							</ul>
 						</div>
