@@ -1,3 +1,8 @@
+#landing {
+	background: url('/images/bog.jpg') no-repeat;
+	background-size: cover;
+}
+
 .mdl-layout__drawer {
 	position: fixed;
 	bottom: 0px;

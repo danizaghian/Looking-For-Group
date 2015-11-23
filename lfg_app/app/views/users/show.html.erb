@@ -73,13 +73,6 @@
 					<legend>Update Form </legend>
 				
 					<div class="form-group">
-					    <%= f.label :username , class: "col-lg-3 control-label" %>
-					    	<div class="col-lg-9">
-					    		<%= f.text_field :username, class: "form-control mdl-textfield__input" %>
-					    	</div>
-					</div><br><br>
-				
-					<div class="form-group">
 					    <%= f.label :first_name , class: "col-lg-3 control-label" %>
 					    <div class="col-lg-9">
 					    	<%= f.text_field :first_name, class: "form-control" %>
@@ -126,7 +119,17 @@
 				    	<div class="col-lg-9">
 				        	<%= f.file_field :avatar %>
 				    	</div>
-				    </div>
+				    </div><br><br>
+
+					<div class="checkbox">
+					<label class="control-label col-lg-3">Genres:</label>
+					    <% @allgenres.each do |genre| %>
+					     	<label>
+								<input type="checkbox" name="<%=genre.name%>" value="<%=genre.name%>"> <%=genre.name%>
+							</label>
+						<% end %>
+					</div> 
+
 					<%= f.submit "Update", class: "btn btn-primary" %>
 				</fieldset>
      		</div> 
