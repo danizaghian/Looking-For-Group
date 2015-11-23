@@ -23,9 +23,16 @@
     </div>
   </div>
   </a>
-  <form name = "send-message" action = "/users/<%=inbox.receipts[0].message.sender.id%>/send_message" method = "post">
+
+<div id="message-modal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+      </div>
+      <div class="modal-body">
+    <form name = "send-message" action = "/users/<%=inbox.receipts[0].message.sender.id%>/send_message" method = "post">
   <label for="subject" class= "col-lg-3 control-label"> Subject </label>
-  <input id = "subject"type="text" name="title" placeholder="Title" class="form-control"> <br>
+  <input id = "subject"type="text" name="title" placeholder="Title" class="form-control" value = "RE: <%=inbox.receipts[0].message.subject%>"> <br>
   <label for="body" class="col-lg-3 control-label">Body</label>
   <input id="body" type="text" name="content" placeholder="content" class="form-control">
   <input type="hidden" name="current" value = "<%= @current_user.id%>">
@@ -33,9 +40,11 @@
   <input type="hidden" name="endLocation" value = "/users/<%=inbox.receipts[0].message.sender.id%>">
   <input type="submit" role="button" value="Send!" >
 </form>
+     
       </div>
-      <div class="modal-footer">
-
+    </div>
+  </div>
+</div>
 <% end%>
   </div>
 </div>

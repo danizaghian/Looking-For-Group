@@ -5,135 +5,135 @@
 			<div class="panel panel-default">
 				<div class="panel-body">
 					<div class="row">
-						<div class="col-lg-6">
+						<div class="col-lg-5">
 			    			<h2><%= @user.username %> </h2>
 						</div>
-						<div class="col-lg-6">
-							<%= image_tag @user.avatar.url(:medium) %> <br>
+						<div class="col-lg-5 navatar">
+							<%= image_tag @user.avatar.url(:thumb) %> <br>
 						</div>
 					</div> <br>
+
 					<div class="row">
 						<div class="col-xl-4 col-sm-3">
 							<h3>Games:</h3>
 							<ul>
 								<% @user.games.each do |game| %>
-									<li> <%= game.name %></li>
+									<li> <a href= "<%=game_path(game.slug)%>"><%= game.name %></a></li>
 								<% end %>
 							</ul>
 						</div>
+
 						<div class="col-xl-4 col-sm-3">
 							<h3>Groups:</h3>
 							<ul>
 								<% @user.groups.each do |group| %>
-									<li> <%= group.name %></li>
+									<li><a href= "<%=group_path(group.slug)%>"><%= group.name %></a></li>
 								<% end %>
 							</ul>
 						</div>
+
 						<div class="col-xl-4 col-sm-3">
 						    <h3> About: </h3> <p><%=  @user.description %> </p>
 						</div>
+
 					</div>
 					<% if @current_user == @user%>
-					<div class="row">
-						<div class="col-xl-4 col-sm-3">
+						<div class="row">
+							<div class="col-xl-4 col-sm-3">
+								<button class ="btn btn-info" data-toggle="modal" data-target="#message-modal">Message</button>
+							</div>
+							<div class="col-xl-4 col-sm-3">
+		    					<%= button_to "Delete Account", @user, method: :delete, data: { confirm: "Are you sure you want to delete your account?" } %>
+							</div>
+							<div class="col-xl-4 col-sm-3">
+								<button class ="btn btn-info" data-toggle="modal" data-target="#edit-modal">Edit Profile</button>
+							</div>
 						</div>
-						<div class="col-xl-4 col-sm-3">
-	    					<%= button_to "Delete Your Account", @user, method: :delete, data: { confirm: "Are you sure you want to delete your account?" } %>
-						</div>
-					</div>
-					<%end%>
-						</div>
+					<% end %>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
 
-<% if @current_user == nil %>
-<% elsif @current_user == @user %>
-<% else %>
-<button class ="btn btn-info" data-toggle="modal" data-target="#message-modal">Message</button>
-<% end %>
 <%= form_for @user, class: "form-horizontal" do |f| %>
 <div id="edit-modal" class="modal fade">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-      <button class="button" class="close" data-dismiss="modal">&times;</button>
-      </div>
-      <div class="modal-body">
-        
-   			<fieldset>
-   				<legend>Update Form </legend>
+	<div class="modal-dialog">
+    	<div class="modal-content">
+    		<div class="modal-header">
+      			<button class="button" class="close" data-dismiss="modal">&times;</button>
+    		</div>
+    		<div class="modal-body">
+				<fieldset>
+				
+					<legend>Update Form </legend>
+				
+					<div class="form-group">
+					    <%= f.label :username , class: "col-lg-3 control-label" %>
+					    	<div class="col-lg-9">
+					    		<%= f.text_field :username, class: "form-control mdl-textfield__input" %>
+					    	</div>
+					</div><br><br>
+				
+					<div class="form-group">
+					    <%= f.label :first_name , class: "col-lg-3 control-label" %>
+					    <div class="col-lg-9">
+					    	<%= f.text_field :first_name, class: "form-control" %>
+					    </div>
+					</div><br><br>
+				
+					<div class="form-group">
+				    	<%= f.label :last_name , class: "col-lg-3 control-label" %>
+				    	<div class="col-lg-9">
+				    		<%= f.text_field :last_name, class: "form-control" %>
+				    	</div>
+				    </div><br><br>
+				
+				    <div class="form-group">
+				    	<%= f.label :email , class: "col-lg-3 control-label" %>
+				    	<div class="col-lg-9">
+				    		<%= f.text_field :email, class: "form-control" %>
+				    	</div>
+				    </div><br><br>
+				
+				    <div class="form-group">
+				    	<%= f.label :city , class: "col-lg-3 control-label" %>
+				    	<div class="col-lg-9">
+				    		<%= f.text_field :city, class: "form-control" %>
+				    	</div>
+				    </div><br><br>
+				
+				    <div class="form-group">
+				    	<%= f.label :age , class: "col-lg-3 control-label" %>
+				    	<div class="col-lg-9">
+				    		<%= f.text_field :age, class: "form-control" %>
+				    	</div>
+				    </div><br><br>
+				
+				    <div class="form-group">
+				    	<%= f.label :description , class: "col-lg-3 control-label" %>
+				    	<div class="col-lg-9">
+				    		<%= f.text_area :description, class: "form-control" %>
+				    	</div>
+				    </div><br><br><br>
+				
+				    <div class="form-group">
+				    	<%= f.label :avatar, class: "col-lg-3 control-label" %>
+				    	<div class="col-lg-9">
+				        	<%= f.file_field :avatar %>
+				    	</div>
+				    </div>
+					<%= f.submit "Update", class: "btn btn-primary" %>
+				</fieldset>
+     		</div> 
+    		<div class="modal-footer"> </div>
 
-			<div class="form-group">
-			    <%= f.label :username , class: "col-lg-3 control-label" %>
-			    <div class="col-lg-9">
-			    	<%= f.text_field :username, class: "form-control mdl-textfield__input" %>
-			    </div>
-			</div><br><br>
-
-			<div class="form-group">
-			    <%= f.label :first_name , class: "col-lg-3 control-label" %>
-			    <div class="col-lg-9">
-			    	<%= f.text_field :first_name, class: "form-control" %>
-			    </div>
-			</div><br><br>
-
-			<div class="form-group">
-		    	<%= f.label :last_name , class: "col-lg-3 control-label" %>
-		    	<div class="col-lg-9">
-		    		<%= f.text_field :last_name, class: "form-control" %>
-		    	</div>
-		    </div><br><br>
-
-		    <div class="form-group">
-		    	<%= f.label :email , class: "col-lg-3 control-label" %>
-		    	<div class="col-lg-9">
-		    		<%= f.text_field :email, class: "form-control" %>
-		    	</div>
-		    </div><br><br>
-
-		    <div class="form-group">
-		    	<%= f.label :city , class: "col-lg-3 control-label" %>
-		    	<div class="col-lg-9">
-		    		<%= f.text_field :city, class: "form-control" %>
-		    	</div>
-		    </div><br><br>
-
-		    <div class="form-group">
-		    	<%= f.label :age , class: "col-lg-3 control-label" %>
-		    	<div class="col-lg-9">
-		    		<%= f.text_field :age, class: "form-control" %>
-		    	</div>
-		    </div><br><br>
-
-		    <div class="form-group">
-		    	<%= f.label :description , class: "col-lg-3 control-label" %>
-		    	<div class="col-lg-9">
-		    		<%= f.text_area :description, class: "form-control" %>
-		    	</div>
-		    </div><br><br><br>
-
-		    <div class="form-group">
-		    <%= f.label :avatar, class: "col-lg-3 control-label" %>
-		      <div class="col-lg-9">
-		        <%= f.file_field :avatar %>
-		      </div>
-		    </div>
-		    
-      </div>
-      <div class="modal-footer">
-
-        <%= f.submit "Update", class: "btn btn-primary" %>
-        </fieldset>
-		<% end %>
-      </div>
-    </div>
-  </div>
+    	</div>
+	</div>
 </div>
+<% end %>
 
-<% if @current_user != nil %>
+<% if @current_user %>
 <div id="message-modal" class="modal fade">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -152,9 +152,7 @@
 	<input type="submit" role="button" value="Send!" >
 </form>
       </div>
-      <div class="modal-footer">
-
-       
+      <div class="modal-footer">  
       </div>
     </div>
   </div>
