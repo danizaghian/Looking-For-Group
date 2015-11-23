@@ -9,6 +9,7 @@
 	  <%= csrf_meta_tags %>
 	</head>
 	<body>
+
 		
 		<!-- took out mdl-layout -->
 		<div class="mdl-js-layout mdl-layout--fixed-drawer">
@@ -26,9 +27,9 @@
 		      <% if current_user != nil %>
 		      <%= link_to "Profile", user_path(current_user), class: "mdl-navigation__link nav-link" %>
 		      <% end %>
-		      <a class="mdl-navigation__link nav-link-image" href="/games">Games <!-- span class = "img-bg" style="background-image: url('/assets/icon.png')"></span> --></a>
+		      <a class="mdl-navigation__link nav-link-image"  data-no-turbolink href="/games">Games <!-- span class = "img-bg" style="background-image: url('/assets/icon.png')"></span> --></a>
 		      <a class="mdl-navigation__link nav-link" href="/groups">Groups</a>
-		      <a class="mdl-navigation__link nav-link" href="/genres">Genres</a>
+		      <a class="mdl-navigation__link nav-link"  data-no-turbolink href="/genres">Genres</a>
 		       <a class="mdl-navigation__link nav-link" href="/about">About</a>
 		     <% if @current_user == nil %>
 		      <%= link_to "Log In", login_path, class: "mdl-navigation__link nav-link" %>
@@ -41,7 +42,6 @@
 		    <div class="page-content">
 		    	<%= yield %>
 		  </main>
-
 		</div>
 
 		

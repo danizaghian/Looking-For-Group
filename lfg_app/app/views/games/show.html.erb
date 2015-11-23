@@ -1,9 +1,10 @@
+
 <a name="top"></a>
 <div class="jumbotron games">
   <div class = "jumbotron-text"><%= @game.name%></div>
 </div>
 
-<i class="btn btn-icon mdi-action-favorite favorite-button" id = "<%= @game.id%>"></i>
+<i class="btn btn-icon mdi-action-favorite favorite-button <%= 'disabled' if @game.users.include? @current_user%>" id = "<%= @game.id%>"></i>
 Recommended number of player: <%= @game.min_players %> - <%= @game.max_players %>	<br>
 Description: <%= @game.description %> <br><br>
 Genres:
