@@ -3,7 +3,7 @@ class Group < ActiveRecord::Base
 	has_many :users, through: :group_users
 	belongs_to :games
 	has_many :genres, through: :games
-	validates :name, presence: true
+	# validates :name, presence: true
 
 		extend FriendlyId
 		friendly_id :name, use: :slugged
