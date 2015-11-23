@@ -1,3 +1,7 @@
+.mdl-layout__drawer {
+	position: fixed;
+	bottom: 0px;
+}
 
 .card-container {
 	display: inline-block;

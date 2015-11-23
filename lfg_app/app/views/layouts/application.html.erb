@@ -11,8 +11,8 @@
 	<body>
 		<!-- took out mdl-layout -->
 		<div class="mdl-js-layout mdl-layout--fixed-drawer">
-		  <div class="demo-drawer mdl-color--blue-gray-900 mdl-color-text--blue-grey-50 is-visible mdl-layout__drawer">
-		    <header class="demo-drawer-header">
+		  <div class="is-visible mdl-layout__drawer">
+		    <header>
 		      <% if current_user %>
 		        <span class="mdl-layout-title"><%=current_user.username%></span>
 		        <div class="navatar"><%= image_tag current_user.avatar.url(:thumb) %></div>
@@ -20,7 +20,7 @@
 		        <span class="mdl-layout-title">Title</span>
 		      <% end %>
 		    </header>
-			<nav class="demo-navigation mdl-color--blue-gray-800 mdl-navigation">
+			<nav class="mdl-navigation">
 		      <a class="mdl-navigation__link nav-link" href="/">Home</a>
 		      <% if current_user != nil %>
 		      <%= link_to "Profile", user_path(current_user), class: "mdl-navigation__link nav-link" %>
