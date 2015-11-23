@@ -9,8 +9,6 @@
 	  <%= csrf_meta_tags %>
 	</head>
 	<body>
-
-		
 		<!-- took out mdl-layout -->
 		<div class="mdl-js-layout mdl-layout--fixed-drawer">
 		  <div class="demo-drawer mdl-color--blue-gray-900 mdl-color-text--blue-grey-50 is-visible mdl-layout__drawer">
@@ -23,7 +21,7 @@
 		      <% end %>
 		    </header>
 			<nav class="demo-navigation mdl-color--blue-gray-800 mdl-navigation">
-		      <a class="mdl-navigation__link nav-link" href="/groups">Home</a>
+		      <a class="mdl-navigation__link nav-link" href="/">Home</a>
 		      <% if current_user != nil %>
 		      <%= link_to "Profile", user_path(current_user), class: "mdl-navigation__link nav-link" %>
 		      <% end %>
