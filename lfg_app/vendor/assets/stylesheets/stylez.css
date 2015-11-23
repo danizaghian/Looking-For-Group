@@ -101,6 +101,24 @@ a.btt {
 	border-radius: 200px;
 }
 
+#sidebar {
+	background-color: #ecf0f1;
+	color: #34495e;
+}
+
+#nav .mdl-navigation__link:hover  {
+  background-color: #7f8c8d;
+  color: #ecf0f1;
+}
+
+.fa-plus {
+	color: white;
+}
+
+a.mdl-navigation__link.nav-link {
+	font-size: 16px;
+}
+
 
 .img-bg {
 	padding: 20px;
