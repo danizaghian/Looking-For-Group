@@ -14,4 +14,22 @@ $(document).ready(function () {
 			console.log($(button).attr('class'))
 		});
 	});
+
+	$(".name-search").on("keydown", function(event){
+		var val = $(".name-search").val().toUpperCase()
+		$('.card-container').each(function(){
+			$(this).show()
+			if ($(this).attr('id').toUpperCase().indexOf(val)== -1){
+				$(this).hide();
+			}
+		});
+	});
+
+	$(".message").css('cursor','pointer');
+
+
+	$(".message").on('click', function(e){
+		e.preventDefault();
+	})
+
 });

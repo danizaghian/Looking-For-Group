@@ -1,3 +1,7 @@
+.mdl-layout__drawer {
+	position: fixed;
+	bottom: 0px;
+}
 
 .card-container {
 	display: inline-block;
@@ -10,14 +14,34 @@
   transition: all 0.2s ease-in-out;
 }
 
+#genre-card .demo-card-square.mdl-card {
+	width: 250px;
+	height: 250px;
+	margin: 20px;
+	transition: all 0.2s ease-in-out;
+}
+
+#genre-card .demo-card-square.mdl-card .mdl-card__title {
+	font-size: 60px;
+}
+
 .demo-card-square.mdl-card:hover {
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
-
 .demo-card-square > .mdl-card__title {
+	color: #fff;
+	background-color: #46B6AC;
+}
+
+a {
+	text-decoration: none !important;
+}
+
+.demo-card-square > a > .mdl-card__title{
+  height: 250px;
   color: #fff;
-  background: url('') bottom right 15% no-repeat #46B6AC;
+  background-color: #46B6AC;
 }
 
 #welcomeButton {
@@ -30,11 +54,20 @@
 	margin: 100px;
 }
 
+.page-content {
+	width: calc(100vw - 240px);
+}
+
+@media screen and (max-width: 1040px) {
+    .page-content {
+        width: 100vw;
+    }
+}
+
 div.jumbotron {
 	height: 150px;
 	color: #ecf0f1;
 	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-	z-index: -1;
 }
 
 div.jumbotron.groups {
@@ -79,9 +112,43 @@ a.btt {
 	border-radius: 200px;
 }
 
+#sidebar {
+	background-color: #ecf0f1;
+	color: #757575;
+}
+
+#nav .mdl-navigation__link:hover  {
+  background-color: #7f8c8d;
+  color: #ecf0f1;
+}
+
+.fa-plus {
+	color: white;
+}
+
+a.mdl-navigation__link.nav-link .fa {
+	margin-left: 30px;
+}
+
+#nav a.mdl-navigation__link.nav-link {
+	font-size: 16px;
+
+}
+
 
 .img-bg {
 	padding: 20px;
 	background-repeat: no-repeat;
 	margin: 60px;
+}
+/*for the inbox page*/
+.reply-button{
+	float:right;
+}
+.sender-image{
+	height:50px;
+	border-radius: 400px;
+}
+.inbox{
+	margin: 20px;
 }

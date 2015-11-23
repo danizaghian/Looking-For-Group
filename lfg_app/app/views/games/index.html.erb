@@ -1,14 +1,17 @@
 <a name="top"></a>
 <div class ="jumbotron games">
 	<div class = "jumbotron-text">GAMES</div>
-</div>
 
+</div>
+<input class="mdl-textfield__input name-search" type="text" name="sample"id="fixed-header-drawer-exp">
 <% @games.each do |game| %>
-  <div class = "card-container">
+  <div class = "card-container" id= "<%=game.name%>">
 	<div class="demo-card-square mdl-card mdl-shadow--2dp">
+	<a href="<%=game_path(game.slug)%>">
 	  <div class="mdl-card__title mdl-card--expand">
 	    <h2 class="mdl-card__title-text"><%= game.name %></h2>
 	  </div>
+	</a>
 
 	  <div class="mdl-card__supporting-text">
 	   Genres:
@@ -19,17 +22,10 @@
 		<% end %>  <br>
 	  <%= game.description %> 
 	  </div>
-
-	  <div class="mdl-card__actions mdl-card--border">
-	    <a href = "<%= game_path(game.slug)%>" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-	      View Game
-	    </a>
-	  </div>
 	</div>
   </div>
 <% end %>
 
 <a href="#top" class="btt mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-	Back to Top
-<i class="material-icons">expand_less</i></a>
+	Back to Top</a>
 
