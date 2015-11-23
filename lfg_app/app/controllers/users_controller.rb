@@ -30,6 +30,7 @@ class UsersController < ApplicationController
 	def show
 	  @user = User.friendly.find(params[:id])
     @genres = @user.genres
+    @allgenres = Genre.all
 	end
 
 	def edit
@@ -41,8 +42,15 @@ class UsersController < ApplicationController
     def update
       user_id = params[:id]
       user = User.friendly.find(user_id)
-      updated_attributes = params.require(:user).permit(:username, :first_name, :last_name, :email, :city, :age, :description, :avatar)
+      updated_attributes = params.require(:user).permit(:first_name, :last_name, :email, :city, :age, :description, :avatar)
       user.update_attributes(updated_attributes)
+      user_genres = Genre.all
+      user.genres = [] 
+        user_genres.each do |genre|
+          if params[genre.name]
+            user.genres.push(genre)
+          end
+        end
       redirect_to user
     end
 

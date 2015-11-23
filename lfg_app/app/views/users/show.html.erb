@@ -8,7 +8,7 @@
 						<div class="col-lg-5">
 			    			<h2><%= @user.username %> </h2>
 						</div>
-						<div class="col-lg-5 navatar">
+						<div class="col-lg-5 profile-avatar">
 							<%= image_tag @user.avatar.url(:medium) %> <br>
 						</div>
 					</div> <br>
@@ -43,10 +43,10 @@
 								<a href ="/users/<%= @user.slug %>/inbox"class ="btn btn-info">Inbox</a>
 							</div>
 							<div class="col-xl-4 col-sm-3">
-		    					<%= button_to "Delete Account", @user, method: :delete, data: { confirm: "Are you sure you want to delete your account?" } %>
+		    					<%= button_to "Delete Account", @user, method: :delete,data: { confirm: "Are you sure you want to delete your account?" }, class: "btn btn-info" %>
 							</div>
 							<div class="col-xl-4 col-sm-3">
-								<button class ="btn btn-info" data-toggle="modal" data-target="#edit-modal">Edit Profile</button>
+								<button class ="btn btn-info" data-toggle="modal" data-target="#edit-modal">Edit</button>
 							</div>
 						<% else %>
 						<div class="col-xl-4 col-sm-3">
@@ -71,13 +71,6 @@
 				<fieldset>
 				
 					<legend>Update Form </legend>
-				
-					<div class="form-group">
-					    <%= f.label :username , class: "col-lg-3 control-label" %>
-					    	<div class="col-lg-9">
-					    		<%= f.text_field :username, class: "form-control mdl-textfield__input" %>
-					    	</div>
-					</div><br><br>
 				
 					<div class="form-group">
 					    <%= f.label :first_name , class: "col-lg-3 control-label" %>
@@ -126,7 +119,17 @@
 				    	<div class="col-lg-9">
 				        	<%= f.file_field :avatar %>
 				    	</div>
-				    </div>
+				    </div><br><br>
+
+					<div class="checkbox">
+					<label class="control-label col-lg-3">Genres:</label>
+					    <% @allgenres.each do |genre| %>
+					     	<label>
+								<input type="checkbox" name="<%=genre.name%>" value="<%=genre.name%>"> <%=genre.name%>
+							</label>
+						<% end %>
+					</div> 
+
 					<%= f.submit "Update", class: "btn btn-primary" %>
 				</fieldset>
      		</div> 
