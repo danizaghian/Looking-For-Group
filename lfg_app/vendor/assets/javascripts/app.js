@@ -24,4 +24,12 @@ $(document).ready(function () {
 			}
 		});
 	});
+
+	$(".message").css('cursor','pointer');
+
+
+	$(".message").on('click', function(e){
+		e.preventDefault();
+	})
+
 });

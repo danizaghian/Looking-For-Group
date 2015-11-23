@@ -10,6 +10,14 @@
   transition: all 0.2s ease-in-out;
 }
 
+.demo-card-square.mdl-card.large-card {
+  width: 100%;
+  height: 100%;
+  margin: 30px;
+  transition: all 0.2s ease-in-out;
+}
+
+
 .demo-card-square.mdl-card:hover {
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
@@ -102,4 +110,15 @@ a.btt {
 	padding: 20px;
 	background-repeat: no-repeat;
 	margin: 60px;
+}
+/*for the inbox page*/
+.reply-button{
+	float:right;
+}
+.sender-image{
+	height:50px;
+	border-radius: 400px;
+}
+.inbox{
+	margin: 20px;
 }
