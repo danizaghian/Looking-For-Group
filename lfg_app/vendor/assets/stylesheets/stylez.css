@@ -21,8 +21,8 @@
 	transition: all 0.2s ease-in-out;
 }
 
-#genre-card .demo-card-square.mdl-card .mdl-card__title {
-	font-size: 60px;
+#genre-card .demo-card-square.mdl-card .mdl-card__title h2{
+	font-size: 30px;
 }
 
 .demo-card-square.mdl-card:hover {
