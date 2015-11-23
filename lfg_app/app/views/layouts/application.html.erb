@@ -23,12 +23,11 @@
 			<nav class="mdl-navigation" id="nav">
 		      <a class="mdl-navigation__link nav-link" href="/"><i class="fa fa-home fa-2x"></i> Home</a>
 		      <% if current_user != nil %>
-		      <%= link_to "Profile", user_path(current_user), class: "mdl-navigation__link nav-link" %>
-		      <% end %>
-		      <a class="mdl-navigation__link nav-link" href="/games">Games</a>
-		      <a class="mdl-navigation__link nav-link" href="/groups">Groups</a>
-		      <a class="mdl-navigation__link nav-link"  data-no-turbolink href="/genres">Genres</a>
-		       <a class="mdl-navigation__link nav-link" href="/about">About</a>
+		      <a class="mdl-navigation__link nav-link" href="/users/<%= current_user.slug %>"><% end %><i class="fa fa-user fa-2x"></i> Profile</a>
+		      <a class="mdl-navigation__link nav-link" href="/games"><i class="fa fa-gamepad fa-2x"></i> Games</a>
+		      <a class="mdl-navigation__link nav-link" href="/groups"><i class="fa fa-group fa-2x"></i>Groups</a>
+		      <a class="mdl-navigation__link nav-link"  data-no-turbolink href="/genres"><i class="fa fa-puzzle-piece fa-2x"></i>Genres</a>
+		       <a class="mdl-navigation__link nav-link" href="/about"><i class="fa fa-rocket fa-2x"></i> About</a>
 		     <% if @current_user == nil %>
 		      <%= link_to "Log In", login_path, class: "mdl-navigation__link nav-link" %>
 		      <% else %> 
