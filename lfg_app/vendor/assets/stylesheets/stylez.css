@@ -3,6 +3,10 @@
 	background-size: cover;
 }
 
+#login-card .mdl-card__title {
+	background-color: #2980b9;
+}
+
 .mdl-layout__drawer {
 	position: fixed;
 	bottom: 0px;
@@ -26,12 +30,21 @@
 	transition: all 0.2s ease-in-out;
 }
 
+#login-card  {
+	margin: 0 auto;
+	display: table;
+}
+
 #genre-card .demo-card-square.mdl-card .mdl-card__title h2{
 	font-size: 30px;
 }
 
 .demo-card-square.mdl-card:hover {
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+#login:hover {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
 .demo-card-square > .mdl-card__title {
