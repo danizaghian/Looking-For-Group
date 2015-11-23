@@ -23,7 +23,8 @@
 			<nav class="mdl-navigation" id="nav">
 		      <a class="mdl-navigation__link nav-link" href="/"> Home <i class="fa fa-home fa-lg"></i></a>
 		      <% if current_user != nil %>
-		      <a class="mdl-navigation__link nav-link" href="/users/<%= current_user.slug %>"><% end %>Profile <i class="fa fa-user fa-lg"></i></a>
+		      <a class="mdl-navigation__link nav-link" href="/users/<%= current_user.slug %>">Profile <i class="fa fa-user fa-lg"></i></a>
+		      <% end %>
 		      <a class="mdl-navigation__link nav-link" href="/games">Games <i class="fa fa-gamepad fa-lg"></i></a>
 		      <a class="mdl-navigation__link nav-link" href="/groups">Groups <i class="fa fa-group fa-lg"></i></a>
 		      <a class="mdl-navigation__link nav-link"  data-no-turbolink href="/genres">Genres <i class="fa fa-puzzle-piece fa-lg"></i></a>
