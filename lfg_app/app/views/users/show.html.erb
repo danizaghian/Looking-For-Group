@@ -1,15 +1,35 @@
 
-<div>
-    Username: <%= @user.username %> <br>
-    Description: <%=  @user.description %>
-	<%= image_tag @user.avatar.url(:large) %>
-	<%= button_to "Log out",  logout_path, method: "destroy" %>
-    <%= button_to "Delete Your Account", @user, method: :delete, data: { confirm: "Are you sure you want to delete your account?" } %>
-    <br>
-    <%= link_to "Inbox", user_path(current_user) %> 
-    
-
-
+<div class="container profile">
+	<div class="row">
+		<div class="col-md-6">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-xl-12 col-sm-8">
+							
+		    <h2><%= @user.username %> </h2><br>
+		    <p><strong> About: </strong><%=  @user.description %> </p>
+			<%= image_tag @user.avatar.url(:large) %> <br>
+			<ul>
+				<% @user.games.each do |game| %>
+					<li> <%= game.name %></li>
+				<% end %>
+			</ul> <br>
+			<ul>
+				<% @user.groups.each do |group| %>
+					<li> <%= group.name %></li>
+				<% end %>
+			</ul>
+			<%= button_to "Log out",  logout_path, method: "destroy" %>
+		    <%= button_to "Delete Your Account", @user, method: :delete, data: { confirm: "Are you sure you want to delete your account?" } %>
+		    <br>
+						</div>
+					</div>
+		    <%= link_to "Inbox", user_path(current_user) %> 
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 
 
