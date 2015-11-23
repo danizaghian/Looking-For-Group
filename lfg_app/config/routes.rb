@@ -19,7 +19,7 @@ Rails.application.routes.draw do
 
 
 
-  get "/users/:user_id/inbox", to: "users#inbox"
+  get "/users/:user_id/inbox", to: "users#inbox", as:"inbox"
 
   #this shows a list of games through a specific selected genre
   get "/genres/:genre_id/games", to: "game_genres#show", as: "genre_games"
