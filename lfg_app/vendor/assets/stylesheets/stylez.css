@@ -26,11 +26,7 @@ a {
 .demo-card-square > a > .mdl-card__title{
   height: 250px;
   color: #fff;
-<<<<<<< HEAD
-  background: url('') bottom right 15% no-repeat #46B6AC;
-=======
   background-color: #46B6AC;
->>>>>>> 32b2edfb92ba65f6a00158abedc9a5afc44ddb25
 }
 
 #welcomeButton {

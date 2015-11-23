@@ -1,18 +1,4 @@
 
-<<<<<<< HEAD
-<div>
-    Username: <%= @user.username %> <br>
-    Description: <%=  @user.description %>
-	<%= image_tag @user.avatar.url(:large) %>
-	<% if @current_user == @user%>
-	<%= button_to "Log out",  logout_path, method: "destroy" %>
-    <%= button_to "Delete Your Account", @user, method: :delete, data: { confirm: "Are you sure you want to delete your account?" } %>
-    <% end %>
-    <br>
-    
-    
-
-=======
 <div class="container profile">
 	<div class="row">
 		<div class="col-md-6">
@@ -21,7 +7,9 @@
 					<div class="row">
 						<div class="col-lg-6">
 			    			<h2><%= @user.username %> </h2>
+			    			<% if @current_user == @user%>
 		    				<%= button_to "Inbox", user_path(current_user) %> 
+		    				<% end %>
 						</div>
 						<div class="col-lg-6">
 							<%= image_tag @user.avatar.url(:thumb) %> <br>
@@ -29,7 +17,7 @@
 					</div> <br>
 					<div class="row">
 						<div class="col-xl-4 col-sm-3">
-							<h3>My Games:</h3>
+							<h3>Games:</h3>
 							<ul>
 								<% @user.games.each do |game| %>
 									<li> <%= game.name %></li>
@@ -37,7 +25,7 @@
 							</ul>
 						</div>
 						<div class="col-xl-4 col-sm-3">
-							<h3>My Groups:</h3>
+							<h3>Groups:</h3>
 							<ul>
 								<% @user.groups.each do |group| %>
 									<li> <%= group.name %></li>
@@ -48,6 +36,7 @@
 						    <h3> About: </h3> <p><%=  @user.description %> </p>
 						</div>
 					</div>
+					<% if @current_user == @user%>
 					<div class="row">
 						<div class="col-xl-4 col-sm-3">
 							<%= button_to "Log out",  logout_path, method: "destroy" %>
@@ -58,12 +47,12 @@
 	    					<%= button_to "Delete Your Account", @user, method: :delete, data: { confirm: "Are you sure you want to delete your account?" } %>
 						</div>
 					</div>
+					<%end%>
 						</div>
 				</div>
 			</div>
 		</div>
 	</div>
->>>>>>> 32b2edfb92ba65f6a00158abedc9a5afc44ddb25
 </div>
 
 <% if @current_user == nil %>

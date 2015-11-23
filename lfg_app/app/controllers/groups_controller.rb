@@ -31,7 +31,7 @@ class GroupsController < ApplicationController
     	# group_id = params[:id]
     	# group = Group.friendly.find(group_id)
       # if current_user.events.include? group
-      # if @current_user
+    	
     @group = Group.create(group_params)
     redirect_to @group
    # else
