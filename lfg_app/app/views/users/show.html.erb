@@ -1,21 +1,67 @@
 
-<div>
-    Username: <%= @user.username %> <br>
-    Description: <%=  @user.description %>
-	<%= image_tag @user.avatar.url(:large) %>
-	<%= button_to "Log out",  logout_path, method: "destroy" %>
-    <%= button_to "Delete Your Account", @user, method: :delete, data: { confirm: "Are you sure you want to delete your account?" } %>
-    <br>
-    <%= link_to "Inbox", user_path(current_user) %> 
-    
-
-
+<div class="container profile">
+	<div class="row">
+		<div class="col-md-6">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-lg-6">
+			    			<h2><%= @user.username %> </h2>
+			    			<% if @current_user == @user%>
+		    				<%= button_to "Inbox", user_path(current_user) %> 
+		    				<% end %>
+						</div>
+						<div class="col-lg-6">
+							<%= image_tag @user.avatar.url(:thumb) %> <br>
+						</div>
+					</div> <br>
+					<div class="row">
+						<div class="col-xl-4 col-sm-3">
+							<h3>Games:</h3>
+							<ul>
+								<% @user.games.each do |game| %>
+									<li> <%= game.name %></li>
+								<% end %>
+							</ul>
+						</div>
+						<div class="col-xl-4 col-sm-3">
+							<h3>Groups:</h3>
+							<ul>
+								<% @user.groups.each do |group| %>
+									<li> <%= group.name %></li>
+								<% end %>
+							</ul>
+						</div>
+						<div class="col-xl-4 col-sm-3">
+						    <h3> About: </h3> <p><%=  @user.description %> </p>
+						</div>
+					</div>
+					<% if @current_user == @user%>
+					<div class="row">
+						<div class="col-xl-4 col-sm-3">
+							<%= button_to "Log out",  logout_path, method: "destroy" %>
+						</div>
+						<div class="col-xl-4 col-sm-3">
+						</div>
+						<div class="col-xl-4 col-sm-3">
+	    					<%= button_to "Delete Your Account", @user, method: :delete, data: { confirm: "Are you sure you want to delete your account?" } %>
+						</div>
+					</div>
+					<%end%>
+						</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 
-
-<button class ="btn btn-info" data-toggle="modal" data-target="#message-modal">Message</button>
-
+<% if @current_user == nil %>
+<% elsif @current_user == @user %>
 <button class ="btn btn-info" data-toggle="modal" data-target="#edit-modal">Edit</button>
+<%= link_to "Inbox", inbox_path(current_user) %> 
+<% else %>
+<button class ="btn btn-info" data-toggle="modal" data-target="#message-modal">Message</button>
+<% end %>
 <%= form_for @user, class: "form-horizontal" do |f| %>
 <div id="edit-modal" class="modal fade">
   <div class="modal-dialog">
@@ -95,7 +141,7 @@
   </div>
 </div>
 
-
+<% if @current_user != nil %>
 <div id="message-modal" class="modal fade">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -119,5 +165,6 @@
     </div>
   </div>
 </div>
+<% end %>
 
 

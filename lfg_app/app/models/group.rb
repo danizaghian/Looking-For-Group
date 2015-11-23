@@ -3,7 +3,7 @@ class Group < ActiveRecord::Base
 	has_many :users, through: :group_users
 	belongs_to :games
 	has_many :genres, through: :games
-	validates :name, presence: true
+	# validates :name, presence: true
 
 	has_attached_file :avatar,
                     :styles => { :large => "400x400#", :medium => "200x200#", :thumb => "70x70#" },
