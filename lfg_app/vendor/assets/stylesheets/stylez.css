@@ -14,10 +14,19 @@
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
-
 .demo-card-square > .mdl-card__title {
+	color: #fff;
+	background-color: #46B6AC;
+}
+
+a {
+	text-decoration: none !important;
+}
+
+.demo-card-square > a > .mdl-card__title{
+  height: 250px;
   color: #fff;
-  background: url('') bottom right 15% no-repeat #46B6AC;
+  background-color: #46B6AC;
 }
 
 #welcomeButton {
