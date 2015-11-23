@@ -28,8 +28,8 @@
       <div class="form-group">
           <%= f.label :game_id , class: "col-lg-3 control-label" %>
           <div class="col-lg-9">
-          <%= f.collection_select(:game_id, Game.all, :id, :name) %>
-          </div>
+        <%= f.collection_select :game_id, Game.all, :id, :name, {prompt: "Select a game"},  {class: "form-control"} %>
+        </div>
         </div><br><br>
 
         <div class="form-group label-floating">
