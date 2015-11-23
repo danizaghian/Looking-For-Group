@@ -1,17 +1,44 @@
+<div class = "container-fluid">
 
-<%= form_for @group do |f| %>
-  <div>
-    <%= f.text_field :name, placeholder: "Name" %>
-  </div>
-  <div>
-    <%= f.text_area :description, placeholder: "Description" %>
-  </div>
-  <div>
-    <%= f.text_field :city, placeholder: "City" %>
-  </div>
-  <div>
-    <%= f.date_field :meet_date, placeholder: "meet date" %>
-  </div>
-  <!-- adds game selector -->
-  <%= f.submit %>
-<% end %>
+  <%= form_for @group, class: "form-horizontal" do |f| %>
+          <fieldset>
+            <legend>New Group Form </legend>
+      <div class ="col-sm-6">
+        <div class="form-group label-floating">
+            <%= f.label :name , class: "control-label", value: "Group Name" %>
+            <%= f.text_field :name, class: "form-control" %>
+        </div><br>
+
+        <div class="form-group label-floating">
+            <%= f.label :description , class: "control-label" %>
+            <%= f.text_area :description, class: "form-control", rows: "6" %>
+        </div><br>
+
+        <div class="form-group label-floating">
+            <%= f.label :city , class: "control-label", value: "City zip" %>
+            <%= f.text_field :city, class: "form-control" %>
+        </div><br>
+
+        <div class="form-group label-floating">
+            <%= f.label :meet_date , class: "control-label" %>
+            <%= f.date_field :meet_date, class: "form-control" %>
+        </div><br>
+
+        <!-- GAME PICKER -->
+      <div class="form-group">
+          <%= f.label :game_id , class: "col-lg-3 control-label" %>
+          <div class="col-lg-9">
+        <%= f.collection_select :game_id, Game.all, :id, :name, {prompt: "Select a game"},  {class: "form-control"} %>
+        </div>
+        </div><br><br>
+
+        <div class="form-group label-floating">
+            <%= f.label :avatar , class: "control-label" %>
+            <%= f.file_field :avatar ,class: "form-control" %>
+        </div><br>
+
+          <%= f.submit "Create New Group", class: "btn btn-primary" %>
+          </fieldset>
+      <% end %>
+
+</div>

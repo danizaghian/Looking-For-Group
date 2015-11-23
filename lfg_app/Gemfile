@@ -32,6 +32,15 @@ gem 'friendly_id'
 
 gem 'bootstrap-material-design'
 
+# mailboxer for messaging
+gem 'mailboxer'
+
+gem "therubyracer"
+
+gem "less-rails"
+
+gem "twitter-bootstrap-rails"
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
