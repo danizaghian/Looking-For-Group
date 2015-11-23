@@ -53,27 +53,20 @@ class UsersController < ApplicationController
       redirect_to root_path
     end
 
-    def send_message
-      id = params[:id]
-      @user = User.friendly.find(id)
-    end
-
     def inbox
       id=params[:user_id]
       @user = User.friendly.find(id)
+      if @user != @current_user
+        redirect_to @user
+      end
     end
 
     def sent_message
-      p @current_user
-      id = params[:id]
       cur_id = params[:current]
+      reciever = params[:reciever_id]
       @current_user = User.find(cur_id)
-      @user = User.friendly.find(id)
-      puts "our target user is"
-      p @user
-      puts "our current user is"
-      p @current_user
+      @user = User.friendly.find(reciever)
       @current_user.send_message(@user, params[:content], params[:title])
-      redirect_to @user
+      redirect_to params[:endLocation]
     end
 end

@@ -141,3 +141,14 @@ a.mdl-navigation__link.nav-link .fa {
 	background-repeat: no-repeat;
 	margin: 60px;
 }
+/*for the inbox page*/
+.reply-button{
+	float:right;
+}
+.sender-image{
+	height:50px;
+	border-radius: 400px;
+}
+.inbox{
+	margin: 20px;
+}
