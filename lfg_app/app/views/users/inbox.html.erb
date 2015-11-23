@@ -1,10 +1,50 @@
 <h1> Inbox!</h1>
-<ul>
-	<% @user.mailbox.inbox.each do |inbox| %>
-			<h4><%= inbox.receipts[0].message.subject %> </h4>
-			<p><%= inbox.receipts[0].message.body %> </p>
-			<% if @user == @current_user %>
-				<button> Reply </button>
-			<% end %>
-	<% end %>
-</ul>
+
+<div class="panel-group inbox" id="accordion" role="tablist" aria-multiselectable="true">
+<!-- Next idea: On read, send ajax request to mark message as read. Or something -->
+<% @user.mailbox.inbox.each do |inbox| %>
+    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<%=inbox.receipts[0].message.id%>" aria-expanded="false" aria-controls="collapseOne">
+    <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title">
+      			<%= image_tag inbox.receipts[0].message.sender.avatar.url(:thumb), class: "sender-image"%>
+			    <%= inbox.receipts[0].message.sender.username%>
+				<span>   -   </span>
+			    <%= inbox.receipts[0].message.subject %> 
+			    <%= inbox.receipts[0].message.created_at %> 
+      </h4>
+    </div>
+    	
+    <div id="collapse<%=inbox.receipts[0].message.id%>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">
+        <%= inbox.receipts[0].message.body %>
+        <button class ="btn btn-info reply-button" data-toggle="modal" data-target="#message-modal<%=inbox.receipts[0].message.id%>">Reply</button>
+      </div>
+    </div>
+  </div>
+  </a>
+
+<div id="message-modal<%=inbox.receipts[0].message.id%>" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+      </div>
+      <div class="modal-body">
+    <form name = "send-message" action = "/users/<%=inbox.receipts[0].message.sender.id%>/send_message" method = "post">
+  <label for="subject" class= "col-lg-3 control-label"> Subject </label>
+  <input id = "subject"type="text" name="title" placeholder="Title" class="form-control" value = "RE: <%=inbox.receipts[0].message.subject%>"> <br>
+  <label for="body" class="col-lg-3 control-label">Body</label>
+  <input id="body" type="text" name="content" placeholder="content" class="form-control">
+  <input type="hidden" name="current" value = "<%= @current_user.id%>">
+  <input type="hidden" name="reciever_id" value = "<%=inbox.receipts[0].message.sender.id%>">
+  <input type="hidden" name="endLocation" value = "/users/<%=inbox.receipts[0].message.sender.id%>/inbox">
+  <input type="submit" role="button" value="Send!" >
+</form>
+     
+      </div>
+    </div>
+  </div>
+</div>
+<% end%>
+  </div>
+</div>

@@ -2,12 +2,13 @@
 
 <div class="jumbotron groups">
   <div class="jumbotron-text">GROUPS</div>
-  <a href= "/groups/new"><button class="mdl-button  mdl-button--fab">+
+  <a href= "/groups/new"><button class="mdl-button  mdl-button--fab"><i class="fa fa-plus"></i>
 </button></a>
 </div>
 
 
 <% @groups.each do |group| %>
+ <a href="<%= group_path(group.slug)%>">
   <div class = "card-container">
 	<div class="demo-card-square mdl-card mdl-shadow--2dp">
 	  <div class="mdl-card__title mdl-card--expand">
@@ -19,19 +20,12 @@
 	   <%= Game.find(group.game_id).name %> <br>
 	   <%= group.meet_date.to_formatted_s(:short) %>
 	  </div>
-	
-	  <!-- ADDS GAME SELECTOR -->
-
-	  <div class="mdl-card__actions mdl-card--border">
-	    <a href = "<%= group_path(group.slug)%>" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-	      View Group
-	    </a>
-	  </div>
+	  
 	</div>
   </div>
+  </a>
 <% end %>
 
 
 <a href="#top" class="btt mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-	Back to Top
-<i class="material-icons">expand_less</i></a>
+	Back to Top</a>
