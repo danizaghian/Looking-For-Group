@@ -3,7 +3,7 @@
   <div class = "jumbotron-text"><%= @genre.name%></div>
 </div>
 
-
+ALL GAMES IN THIS GENRE:<br>
 <% @genre.games.each do |game| %>
   <div class = "card-container">
   <div class="demo-card-square mdl-card mdl-shadow--2dp">
@@ -22,7 +22,7 @@
     <% end %>  <br>
     <%= game.description %> 
     </div>
-    
+
   </div>
   </div>
 <% end %>

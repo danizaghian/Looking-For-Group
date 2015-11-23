@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
     if @user
       login(@user)
       # redirect_to "/users/#{@user.id}"
-      redirect_to user_path(current_user)
+      redirect_to "/home"
     else
       flash[:error] = "Error, cannot find user"
       redirect_to "/login"

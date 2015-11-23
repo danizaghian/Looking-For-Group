@@ -4,6 +4,7 @@
 	  <title>LfgApp</title>
 	  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 	  <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
 	  <%= csrf_meta_tags %>
@@ -11,28 +12,26 @@
 	<body>
 		<!-- took out mdl-layout -->
 		<div class="mdl-js-layout mdl-layout--fixed-drawer">
-		  <div class="demo-drawer mdl-color--blue-gray-900 mdl-color-text--blue-grey-50 is-visible mdl-layout__drawer">
-		    <header class="demo-drawer-header">
+		  <div class="is-visible mdl-layout__drawer" id="sidebar">
+		    <header id="header">
 		      <% if current_user %>
 		        <span class="mdl-layout-title"><%=current_user.username%></span>
 		        <div class="navatar"><%= image_tag current_user.avatar.url(:thumb) %></div>
 		      <% else %>
-		        <span class="mdl-layout-title">Title</span>
 		      <% end %>
 		    </header>
-			<nav class="demo-navigation mdl-color--blue-gray-800 mdl-navigation">
-		      <a class="mdl-navigation__link nav-link" href="/">Home</a>
+			<nav class="mdl-navigation" id="nav">
+		      <a class="mdl-navigation__link nav-link" href="/"> Home <i class="fa fa-home fa-lg"></i></a>
 		      <% if current_user != nil %>
-		      <%= link_to "Profile", user_path(current_user), class: "mdl-navigation__link nav-link" %>
-		      <% end %>
-		      <a class="mdl-navigation__link nav-link-image"  data-no-turbolink href="/games">Games <!-- span class = "img-bg" style="background-image: url('/assets/icon.png')"></span> --></a>
-		      <a class="mdl-navigation__link nav-link" href="/groups">Groups</a>
-		      <a class="mdl-navigation__link nav-link"  data-no-turbolink href="/genres">Genres</a>
-		       <a class="mdl-navigation__link nav-link" href="/about">About</a>
+		      <a class="mdl-navigation__link nav-link" href="/users/<%= current_user.slug %>"><% end %>Profile <i class="fa fa-user fa-lg"></i></a>
+		      <a class="mdl-navigation__link nav-link" href="/games">Games <i class="fa fa-gamepad fa-lg"></i></a>
+		      <a class="mdl-navigation__link nav-link" href="/groups">Groups <i class="fa fa-group fa-lg"></i></a>
+		      <a class="mdl-navigation__link nav-link"  data-no-turbolink href="/genres">Genres <i class="fa fa-puzzle-piece fa-lg"></i></a>
+		       <a class="mdl-navigation__link nav-link" href="/about">About <i class="fa fa-rocket fa-lg"></i></a>
 		     <% if @current_user == nil %>
 		      <%= link_to "Log In", login_path, class: "mdl-navigation__link nav-link" %>
 		      <% else %> 
-		      <%= link_to "Log out", logout_path, method: :post, class: " mdl-navigation__link nav-link" %>
+		      <span><%= link_to "Log out", logout_path, method: :post, class: " mdl-navigation__link nav-link" %><i class="fa fa-power-off fa-lg"></i></span>
 		      <% end%>
 		    </nav>
 		  </div>
