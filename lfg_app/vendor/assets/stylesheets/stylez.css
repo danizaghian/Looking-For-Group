@@ -1,3 +1,7 @@
+.mdl-layout__drawer {
+	position: fixed;
+	bottom: 0px;
+}
 
 .card-container {
 	display: inline-block;
@@ -8,6 +12,17 @@
   height: 320px;
   margin: 30px;
   transition: all 0.2s ease-in-out;
+}
+
+#genre-card .demo-card-square.mdl-card {
+	width: 250px;
+	height: 250px;
+	margin: 20px;
+	transition: all 0.2s ease-in-out;
+}
+
+#genre-card .demo-card-square.mdl-card .mdl-card__title {
+	font-size: 60px;
 }
 
 .demo-card-square.mdl-card:hover {
@@ -95,6 +110,29 @@ a.btt {
 .navatar img {
 	margin-left: 59px;
 	border-radius: 200px;
+}
+
+#sidebar {
+	background-color: #ecf0f1;
+	color: #757575;
+}
+
+#nav .mdl-navigation__link:hover  {
+  background-color: #7f8c8d;
+  color: #ecf0f1;
+}
+
+.fa-plus {
+	color: white;
+}
+
+a.mdl-navigation__link.nav-link .fa {
+	margin-left: 30px;
+}
+
+#nav a.mdl-navigation__link.nav-link {
+	font-size: 16px;
+
 }
 
 
