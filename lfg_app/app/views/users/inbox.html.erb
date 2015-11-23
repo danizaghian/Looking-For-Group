@@ -1,8 +1,8 @@
 <h1> Inbox!</h1>
 
 <div class="panel-group inbox" id="accordion" role="tablist" aria-multiselectable="true">
+<!-- Next idea: On read, send ajax request to mark message as read. Or something -->
 <% @user.mailbox.inbox.each do |inbox| %>
-  
     <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<%=inbox.receipts[0].message.id%>" aria-expanded="false" aria-controls="collapseOne">
     <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingOne">
@@ -23,6 +23,19 @@
     </div>
   </div>
   </a>
+  <form name = "send-message" action = "/users/<%=inbox.receipts[0].message.sender.id%>/send_message" method = "post">
+  <label for="subject" class= "col-lg-3 control-label"> Subject </label>
+  <input id = "subject"type="text" name="title" placeholder="Title" class="form-control"> <br>
+  <label for="body" class="col-lg-3 control-label">Body</label>
+  <input id="body" type="text" name="content" placeholder="content" class="form-control">
+  <input type="hidden" name="current" value = "<%= @current_user.id%>">
+  <input type="hidden" name="reciever_id" value = "<%=inbox.receipts[0].message.sender.id%>">
+  <input type="hidden" name="endLocation" value = "/users/<%=inbox.receipts[0].message.sender.id%>">
+  <input type="submit" role="button" value="Send!" >
+</form>
+      </div>
+      <div class="modal-footer">
+
 <% end%>
   </div>
 </div>

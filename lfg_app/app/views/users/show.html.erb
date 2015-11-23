@@ -147,6 +147,8 @@
 	<label for="body" class="col-lg-3 control-label">Body</label>
 	<input id="body" type="text" name="content" placeholder="content" class="form-control">
 	<input type="hidden" name="current" value = "<%= @current_user.id%>">
+	<input type="hidden" name="reciever_id" value = "<%= @user.id%>">
+	<input type="hidden" name="endLocation" value = "/users/<%= @user.id%>">
 	<input type="submit" role="button" value="Send!" >
 </form>
       </div>
