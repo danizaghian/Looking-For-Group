@@ -8,6 +8,7 @@ Group Show
 
 	<%= link_to "All Groups",  groups_path, method: :get %>
 </div>
+
 <% if @current_user == nil %>
 <p> You're not logged in, <%= link_to "Log in", login_path %> or <%= link_to "Sign up", new_user_path %> for an account to join the group! </p>
 <% elsif @group.gm == @current_user.id %>
@@ -63,6 +64,13 @@ Group Show
 		    	</div>
 		    </div><br><br>
 		    
+		    <div class="form-group label-floating">
+            <%= f.label :avatar , class: "col-lg-3 control-label" %>
+            <div class="col-lg-9">
+            <%= f.file_field :avatar ,class: "form-control" %>
+            </div>
+        </div><br>
+
       </div>
       <div class="modal-footer">
 
