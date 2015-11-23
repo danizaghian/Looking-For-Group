@@ -1,13 +1,3 @@
-.mdl-layout__drawer {
-	margin-left: 250px;
-	position: fixed;
-	bottom: 0px;
-	top: 0px;
-}
-
-.page-container {
-	margin-left: 240px;
-}
 
 .card-container {
 	display: inline-block;
@@ -24,10 +14,23 @@
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
-
 .demo-card-square > .mdl-card__title {
+	color: #fff;
+	background-color: #46B6AC;
+}
+
+a {
+	text-decoration: none !important;
+}
+
+.demo-card-square > a > .mdl-card__title{
+  height: 250px;
   color: #fff;
+<<<<<<< HEAD
   background: url('') bottom right 15% no-repeat #46B6AC;
+=======
+  background-color: #46B6AC;
+>>>>>>> 32b2edfb92ba65f6a00158abedc9a5afc44ddb25
 }
 
 #welcomeButton {
@@ -40,11 +43,20 @@
 	margin: 100px;
 }
 
+.page-content {
+	width: calc(100vw - 240px);
+}
+
+@media screen and (max-width: 1040px) {
+    .page-content {
+        width: 100vw;
+    }
+}
+
 div.jumbotron {
 	height: 150px;
 	color: #ecf0f1;
 	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-
 }
 
 div.jumbotron.groups {
@@ -67,9 +79,9 @@ div.jumbotron.games {
 
 /*jumbotron fab*/
 div.jumbotron button {
-	position: absolute;
-	top: 149px;
+	top: -10px;
     right: 50px;
+    float: right;
     background: #64ffda !important;
     color: white;
     transform: translate(0px, -28px);
@@ -84,7 +96,10 @@ a.btt {
 	width: 130px;
 }
 
-
+.navatar img {
+	margin-left: 59px;
+	border-radius: 200px;
+}
 
 
 .img-bg {
