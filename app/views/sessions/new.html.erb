@@ -1,0 +1,42 @@
+<style>
+	body{
+		background-color: #95a5a6;
+	}
+</style>
+
+	<div class = "card-container" id="login-card">
+		<div class="demo-card-square mdl-card mdl-shadow--2dp"id="login">
+		  <div class="mdl-card__title mdl-card--expand">
+		    <h2 class="mdl-card__title-text">Log In</h2>
+		  </div>
+
+		  <div class="mdl-card__supporting-text">
+		  
+			<%= form_for @user, url: "/sessions", method: "post", class: "form-horizontal" do |f| %>
+				<fieldset>
+				
+					<div class="form-group">
+					    <%= f.label :username , class: "col-xs-3 control-label" %>
+					    	<div class="col-xs-8 col-xs-offset-1">
+					    		<%= f.text_field :username, class: "form-control mdl-textfield__input" %>
+					    	</div>
+					</div><br><br>
+
+
+				    <div class="form-group">
+					    <%= f.label :password , class: "col-xs-3 control-label" %>
+					    	<div class="col-xs-8 col-xs-offset-1">
+					    		<%= f.password_field :password, class: "form-control" %>
+					    	</div>
+					    </div><br><br>
+
+
+					<%= f.submit "Log In", class: "btn btn-info btn-raised" %>
+				</fieldset>
+
+			<% end %>
+
+		  </div>
+
+	</div>
+</div>

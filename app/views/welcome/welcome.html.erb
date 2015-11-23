@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <title>LfgApp</title>
+	  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	  <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
+	  <%= csrf_meta_tags %>
+	</head>
+	<body id = "landing">
+
+		<div class="mdl-card mdl-shadow--2dp">
+		  <div class="mdl-card__title">
+		    <h2 class="mdl-card__title-text">Sign Up</h2>
+		  </div>
+		  <div class="mdl-card__supporting-text">
+
+
+<%= form_for @user, class: "form-horizontal" do |f| %>
+	<fieldset>
+	
+		<div class="form-group">
+		    <%= f.label :username , class: "col-lg-3 control-label" %>
+		    	<div class="col-lg-9">
+		    		<%= f.text_field :username, class: "form-control mdl-textfield__input" %>
+		    	</div>
+		</div><br><br>
+	
+		<div class="form-group">
+		    <%= f.label :first_name , class: "col-lg-3 control-label" %>
+		    <div class="col-lg-9">
+		    	<%= f.text_field :first_name, class: "form-control" %>
+		    </div>
+		</div><br><br>
+	
+		<div class="form-group">
+	    	<%= f.label :last_name , class: "col-lg-3 control-label" %>
+	    	<div class="col-lg-9">
+	    		<%= f.text_field :last_name, class: "form-control" %>
+	    	</div>
+	    </div><br><br>
+
+	    <div class="form-group">
+		    <%= f.label :password , class: "col-lg-3 control-label" %>
+		    	<div class="col-lg-9">
+		    		<%= f.password_field :password, class: "form-control" %>
+		    	</div>
+		    </div><br><br>
+	
+	    <div class="form-group">
+	    	<%= f.label :email , class: "col-lg-3 control-label" %>
+	    	<div class="col-lg-9">
+	    		<%= f.text_field :email, class: "form-control" %>
+	    	</div>
+	    </div><br><br>
+	
+	    <div class="form-group">
+	    	<%= f.label :city , class: "col-lg-3 control-label" %>
+	    	<div class="col-lg-9">
+	    		<%= f.text_field :city, class: "form-control" %>
+	    	</div>
+	    </div><br><br>
+	
+	    <div class="form-group">
+	    	<%= f.label :age , class: "col-lg-3 control-label" %>
+	    	<div class="col-lg-9">
+	    		<%= f.text_field :age, class: "form-control" %>
+	    	</div>
+	    </div><br><br>
+	
+	    <div class="form-group">
+	    	<%= f.label :description , class: "col-lg-3 control-label" %>
+	    	<div class="col-lg-9">
+	    		<%= f.text_area :description, class: "form-control" %>
+	    	</div>
+	    </div><br><br><br>
+	
+	    <div class="form-group">
+	    	<%= f.label :avatar, class: "col-lg-3 control-label" %>
+	    	<div class="col-lg-9">
+	        	<%= f.file_field :avatar %>
+	    	</div>
+	    </div><br><br>
+		
+
+		<div class="checkbox">
+		    <% @genres.each do |genre| %>
+		     	<label>
+					<input type="checkbox" name="<%=genre.name%>" value="<%=genre.name%>"> <%=genre.name%>
+				</label>
+			<% end %>
+		</div> 
+
+		<%= f.submit "Sign Up", class: "btn btn-primary btn-raised" %>
+	</fieldset>
+
+<% end %>
+
+
+		  </div>
+		</div>
+
+	</body>
+</html>
