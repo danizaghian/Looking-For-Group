@@ -72,7 +72,7 @@ div#login.mdl-card.mdl-shadow--2dp {
 	width: 200px;
 }
 
-#genre-card .demo-card-square.mdl-card {
+.genre-card .demo-card-square.mdl-card {
 	width: 250px;
 	height: 250px;
 	margin: 20px;
@@ -84,7 +84,7 @@ div#login.mdl-card.mdl-shadow--2dp {
 	display: table;
 }
 
-#genre-card .demo-card-square.mdl-card .mdl-card__title h2{
+.genre-card .demo-card-square.mdl-card .mdl-card__title h2{
 	font-size: 30px;
 }
 
@@ -157,6 +157,18 @@ div.jumbotron.profile {
 	background-color: #34495e;
 }
 
+div.mdl-textfield {
+	margin-top: -70px;
+	float: right;
+}
+
+div.jumbotron.games.jumbotron-text{
+	margin-top: 100px;
+}
+
+div.jumbotron.genres.jumbotron-text{
+	margin-top: 50px;
+}
 
 .jumbotron-text {
 	margin-top:20px;

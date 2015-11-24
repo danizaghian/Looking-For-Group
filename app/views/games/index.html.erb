@@ -2,8 +2,20 @@
 <div class ="jumbotron games">
 	<div class = "jumbotron-text">GAMES</div>
 
+	<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">
+		<label class="mdl-button mdl-js-button mdl-button--icon"
+		       for="jumbotron-search">
+		  <i class="fa fa-search"></i>
+		</label>
+		<div class="mdl-textfield__expandable-holder">
+		  <input class="mdl-textfield__input name-search" type="text" name="sample"
+		         id="jumbotron-search">
+		</div>
+	</div>
+
 </div>
-<input class="mdl-textfield__input name-search" type="text" name="sample"id="fixed-header-drawer-exp">
+
+
 
 <% @games.each do |game| %>
   <div class = "card-container" id= "<%=game.name%>">
