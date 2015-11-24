@@ -213,7 +213,7 @@ a.mdl-navigation__link.nav-link .fa {
 	padding-left: 90px;
 }
 
-#group-info {
+#group-game-info {
 	margin-left: 20px;
 	font-size: 28px;
 }
@@ -235,6 +235,15 @@ div.jumbotron.profile .btn-info {
 div.jumbotron.groups .btn-danger {
 	float: right;
 	margin-top: -10px;
+}
+
+div.jumbotron.games span {
+	float:right;
+	font-size: 16px;
+}
+
+div.jumbotron.games .btn-icon {
+	margin-top: -5px;
 }
 
 .new-group-form {

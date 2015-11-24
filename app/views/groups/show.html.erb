@@ -22,7 +22,7 @@
   <div class="jumbotron-text"><%= @group.name %></div>
 </div>
 
-<div id="group-info">
+<div id="group-game-info">
 	<a href="/games/<%= Game.find(@group.game_id).slug %>"><%= Game.find(@group.game_id).name %></a><br>
     <%=  @group.description %><br>
     Meeting on <%= @group.meet_date.to_formatted_s(:long) %>

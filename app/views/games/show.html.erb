@@ -1,22 +1,22 @@
-
 <a name="top"></a>
 <div class="jumbotron games">
+	<span>Favorite <i class="btn btn-icon btn-danger btn-raised mdi-action-favorite favorite-button <%= 'disabled' if @game.users.include? @current_user%>" id = "<%= @game.id%>"></i></span>
   <div class = "jumbotron-text"><%= @game.name%></div>
 </div>
 
-<i class="btn btn-icon mdi-action-favorite favorite-button <%= 'disabled' if @game.users.include? @current_user%>" id = "<%= @game.id%>"></i>
-Recommended number of player: <%= @game.min_players %> - <%= @game.max_players %>	<br>
-Description: <%= @game.description %> <br><br>
-Genres:
-<ul>
-	<% @genres.each do |genre| %>
-		<li>
-		 <%= genre.name %> <br>
-		</li>
- 	<% end %>
-</ul>
+<div id="group-game-info">
+	   Genres: 
+	   <% i = 0 %>
+	   <% length = @game.genres.length %>
+	   <% @game.genres.each do |genre| %>
+	   			<%= link_to genre.name, genre_path(genre.slug)%><% i+= 1%><% if i < (length) %>,<% end %>
+		<% end %>  <br>
+    <%=  @game.description %><br>
+    Recommended number of player: <%= @game.min_players %> - <%= @game.max_players %>	<br>
+</div><br><br>
 
-ALL GROUPS OF THIS GAME: <br>
+
+
 <% @game.groups.each do |group| %>
   <a href="<%= group_path(group.slug)%>">
   <div class = "card-container">
