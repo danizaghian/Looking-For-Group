@@ -141,6 +141,16 @@ div.jumbotron.groups {
 	background-color: #8e44ad;
 }
 
+div.jumbotron.inbox-jumbotron {
+	background-color: #f1c40f;
+}
+
+.fa-meh-o{
+	color: #f1c40f;
+	font-size: 70px;
+	text-align: center;
+}
+
 div.jumbotron.genres {
 	background-color: #3498db;
 }
