@@ -113,6 +113,12 @@ div.jumbotron.groups {
 	background-color: #8e44ad;
 }
 
+div.jumbotron.inbox {
+	background-color: #f1c40f;
+}
+
+
+
 div.jumbotron.genres {
 	background-color: #3498db;
 }
