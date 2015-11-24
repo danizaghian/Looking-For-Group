@@ -5,7 +5,11 @@
 
 #landing-card {
 	width: 500px;
-	left: 0;
+	padding-left: 30px;
+}
+
+#landing-card-div {
+	margin-top: 40px;
 }
 
 #landing-text-header {
@@ -15,6 +19,12 @@
 
 #landing-text {
 	font-size: 80px;
+	color: #ecf0f1;
+}
+
+#landing-text-header h2 {
+	font-size: 36px;
+	color: #ecf0f1;
 }
 
 
