@@ -41,6 +41,7 @@ gem "less-rails"
 
 gem "twitter-bootstrap-rails"
 
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
@@ -49,6 +50,7 @@ gem "twitter-bootstrap-rails"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+	gem 'sqlite3'
   gem 'byebug'
 end
 
@@ -60,3 +62,7 @@ group :development do
   gem 'spring'
 end
 
+group :production do
+	gem 'pg'
+	gem 'rails_12factor'
+end
