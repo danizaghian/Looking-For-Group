@@ -50,6 +50,11 @@ gem "twitter-bootstrap-rails"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'dotenv-rails', :groups => [:development, :test]
+
+# gem 'aws-sdk', '~> 1.6'
+gem 'aws-sdk-v1'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'sqlite3'

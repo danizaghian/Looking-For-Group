@@ -40,6 +40,9 @@ GEM
     autoprefixer-rails (6.1.0.1)
       execjs
       json
+    aws-sdk-v1 (1.66.0)
+      json (~> 1.4)
+      nokogiri (>= 1.4.4)
     bcrypt (3.1.10)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
@@ -68,6 +71,10 @@ GEM
     coffee-script-source (1.10.0)
     commonjs (0.2.7)
     debug_inspector (0.0.2)
+    dotenv (2.0.2)
+    dotenv-rails (2.0.2)
+      dotenv (= 2.0.2)
+      railties (~> 4.0)
     erubis (2.7.0)
     execjs (2.6.0)
     foreigner (1.7.4)
@@ -197,9 +204,12 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt (~> 3.1.10)
+  aws-sdk-v1
+  bcrypt (~> 3.1.7)
   bootstrap-material-design
   byebug (~> 8.2.0)
   coffee-rails (~> 4.1.0)
+  dotenv-rails
   friendly_id
   jbuilder (~> 2.0)
   jquery-rails
