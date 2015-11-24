@@ -130,6 +130,12 @@ a.btt {
 	border-radius: 200px;
 }
 
+#header span{
+	margin-top: 20px;
+	margin-bottom: 20px;
+	text-align:center;
+}
+
 .profile-avatar img {
 	border-radius: 15px;
 }
@@ -137,6 +143,11 @@ a.btt {
 #sidebar {
 	background-color: #ecf0f1;
 	color: #757575;
+}
+
+div.mdl-layout__drawer-button {
+	background: url("/images/hamburger.jpg");
+	background-size: cover;
 }
 
 #nav .mdl-navigation__link:hover  {
