@@ -25,7 +25,7 @@ genre11 = Genre.create(name: "Racer")
 genre12 = Genre.create(name: "Shooter")
 
 game1 = Game.create(name: "Halo: CE", min_players: 1, max_players: 16, description: "Space marines, shoot up the aliens", picture: "/images/master-chief.png")
-game2 = Game.create(name: "Settlers of Catan", min_players: 2, max_players: 4, description: "Does anyone want a sheep??", picture: "/images/")
+game2 = Game.create(name: "Settlers of Catan", min_players: 2, max_players: 4, description: "Does anyone want a sheep??", picture: "/images/sheep.png")
 game3 = Game.create(name: "Dungeons & Dragons", min_players: 3, max_players: 6, description: "Table top nerd-core goofiness", picture: "/images/dragon.png")
 game4 = Game.create(name: "League of Legends", min_players: 1, max_players: 10, description: "Up your daily sodium intake", picture: "/images/ahri-2.png")
 game5 = Game.create(name: "Hearthstone", min_players: 1, max_players: 2, description: "Online card game with wow characters", picture: "/images/hearth.png")
