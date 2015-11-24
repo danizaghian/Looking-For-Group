@@ -1,4 +1,4 @@
-<div class = "container-fluid">
+<div class = "container-fluid new-group-form">
 
   <%= form_for @group, class: "form-horizontal" do |f| %>
           <fieldset>
@@ -24,13 +24,10 @@
             <%= f.date_field :meet_date, class: "form-control" %>
         </div><br>
 
-        <!-- GAME PICKER -->
       <div class="form-group">
-          <%= f.label :game_id , class: "col-lg-3 control-label" %>
-          <div class="col-lg-9">
-        <%= f.collection_select :game_id, Game.all, :id, :name, {prompt: "Select a game"},  {class: "form-control"} %>
-        </div>
-        </div><br><br>
+          <%= f.label :game_id , class: "control-label" %>
+          <%= f.collection_select :game_id, Game.all, :id, :name, {prompt: "Select a game"},  {class: "form-control"} %>
+      </div><br><br>
 
         <div class="form-group label-floating">
             <%= f.label :avatar , class: "control-label" %>

@@ -107,7 +107,7 @@ div.jumbotron.games {
 }
 
 /*jumbotron fab*/
-div.jumbotron button {
+div.jumbotron button.fab {
 	top: -10px;
     right: 50px;
     float: right;
@@ -162,9 +162,23 @@ a.mdl-navigation__link.nav-link .fa {
 	font-size: 28px;
 }
 
-.groups .btn {
+.groups .btn-raised {
 	margin-top: -5px;
 	float: right;
+}
+
+div.jumbotron.groups .btn-info {
+	float: right;
+	margin-top: -10px;
+}
+div.jumbotron.groups .btn-danger {
+	float: right;
+	margin-top: -10px;
+}
+
+.new-group-form {
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
 
 

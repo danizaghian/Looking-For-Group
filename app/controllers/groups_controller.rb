@@ -35,6 +35,8 @@ class GroupsController < ApplicationController
     @group = Group.create(group_params)
     game = Game.find(params.require(:group).permit([:game_id])[:game_id])
     game.groups.push(@group)
+    @group.gm = @current_user.id
+    @group.save
     redirect_to @group
    # else
    # 	flash[:error] = "You need to be logged in to do that"
