@@ -5,7 +5,10 @@ class UserGenresController < ApplicationController
 		@groups = []
 		@genres.each do |genre|
 			genre.groups.each do |group|
-				@groups << group unless @groups.include? group
+				if @groups.include? group or group.users.include? @user
+				else
+					@groups << group
+				end
 			end
 		end
 

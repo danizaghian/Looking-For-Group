@@ -22,7 +22,6 @@
   <div class="jumbotron-text"><%= @group.name %></div>
 </div>
 
-
 <div id="group-info">
 	<a href="/games/<%= Game.find(@group.game_id).slug %>"><%= Game.find(@group.game_id).name %></a><br>
     <%=  @group.description %><br>
