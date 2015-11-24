@@ -5,12 +5,12 @@
 </div>
 
 <div id="group-game-info">
-	   Genres: 
+	   <span id="game-genres">Genres: 
 	   <% i = 0 %>
 	   <% length = @game.genres.length %>
 	   <% @game.genres.each do |genre| %>
 	   			<%= link_to genre.name, genre_path(genre.slug)%><% i+= 1%><% if i < (length) %>,<% end %>
-		<% end %>  <br>
+		<% end %> </span> <br><br>
     <%=  @game.description %><br>
     Recommended number of player: <%= @game.min_players %> - <%= @game.max_players %>	<br>
 </div><br><br>
