@@ -157,6 +157,17 @@ a.mdl-navigation__link.nav-link .fa {
 
 }
 
+#group-info {
+	margin-left: 20px;
+	font-size: 28px;
+}
+
+.groups .btn {
+	margin-top: -5px;
+	float: right;
+}
+
+
 
 .img-bg {
 	padding: 20px;
