@@ -16,7 +16,7 @@
 		    <header id="header">
 		      <% if current_user %>
 		        <span class="mdl-layout-title"><%=current_user.username%></span>
-		        <div class="navatar"><%= image_tag current_user.avatar.url(:thumb) %></div>
+		        <!-- <div class="navatar"><%= image_tag current_user.avatar.url(:thumb) %></div> -->
 		      <% else %>
 		      <% end %>
 		    </header>
