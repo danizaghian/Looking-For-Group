@@ -1,5 +1,8 @@
 
 Group Show
+  <%= image_tag @group.avatar.url %>
+  <%= image_tag @group.avatar.url(:medium) %>
+  <%= image_tag @group.avatar.url(:thumb) %>
 
 <div>
     Name: <%= @group.name %> <br>
