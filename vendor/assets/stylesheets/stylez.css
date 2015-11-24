@@ -5,7 +5,12 @@
 
 #landing-card {
 	width: 500px;
-	left: 0;
+	padding-left: 30px;
+}
+
+div#landing-card.mdl-card.mdl-shadow--2dp {
+	background: rgba(255, 255, 255, 0.7);
+	border-radius: 10px;
 }
 
 #landing-text-header {
@@ -15,6 +20,17 @@
 
 #landing-text {
 	font-size: 80px;
+	color: #ecf0f1;
+}
+
+#landing-text-header h2 {
+	font-size: 36px;
+	color: #ecf0f1;
+}
+
+#login-but {
+	float: right;
+	margin-right: 30px;
 }
 
 
@@ -42,6 +58,11 @@
   height: 320px;
   margin: 30px;
   transition: all 0.2s ease-in-out;
+}
+
+.list-image {
+	height:200px;
+	width: 200px;
 }
 
 #genre-card .demo-card-square.mdl-card {
@@ -127,6 +148,14 @@ div.jumbotron.games {
 	background-color: #e74c3c;
 }
 
+div.jumbotron.home {
+	background-color: #e67e22;
+}
+
+div.jumbotron.profile {
+	background-color: #34495e;
+}
+
 
 .jumbotron-text {
 	margin-top:20px;
@@ -134,7 +163,7 @@ div.jumbotron.games {
 }
 
 /*jumbotron fab*/
-div.jumbotron button.fab {
+div.jumbotron.groups a button#fab {
 	top: -10px;
     right: 50px;
     float: right;
@@ -192,10 +221,10 @@ a.mdl-navigation__link.nav-link .fa {
 
 #nav a.mdl-navigation__link.nav-link {
 	font-size: 16px;
-
+	padding-left: 90px;
 }
 
-#group-info {
+#group-game-info {
 	margin-left: 20px;
 	font-size: 28px;
 }
@@ -209,14 +238,36 @@ div.jumbotron.groups .btn-info {
 	float: right;
 	margin-top: -10px;
 }
+
+div.jumbotron.profile .btn-info {
+	float: right;
+	margin-top: -10px;
+}
 div.jumbotron.groups .btn-danger {
 	float: right;
 	margin-top: -10px;
 }
 
+div.jumbotron.games span {
+	float:right;
+	font-size: 16px;
+}
+
+div.jumbotron.games .btn-icon {
+	margin-top: -5px;
+}
+
 .new-group-form {
 	margin-top: 20px;
 	margin-bottom: 20px;
+}
+
+div.modal-header button.close {
+	float:right;
+}
+
+#game-genres {
+	font-size: 16px;
 }
 
 

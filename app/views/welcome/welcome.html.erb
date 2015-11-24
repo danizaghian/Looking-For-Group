@@ -11,18 +11,20 @@
 	</head>
 	<body id = "landing">
 
-  <div class = "container-fluid">
 	<div class ="row">
 
 	<div class = "col-xs-5" id = "landing-text-header">
 		<h1 id="landing-text">Looking For Group</h1>
-		<h1>A dynamic way to connect with like-minded adventurers.</h1>
+		<h2>A dynamic way to connect with like-minded adventurers.</h2>
 	</div>
 
-	<div class ="col-xs-6">
+	<a id="login-but" href ="/login" class="btn btn-info">Log In</a>
+
+	<div class ="col-xs-5 col-xs-offset-1" id="landing-card-div">
 		<div class="mdl-card mdl-shadow--2dp" id="landing-card">
 		  <div class="mdl-card__title">
-		    <h2 class="mdl-card__title-text">Sign Up</h2>
+
+		    <h2 class="mdl-card__title-text">Sign Up</h2> 
 		  </div>
 		  <div class="mdl-card__supporting-text">
 
@@ -106,6 +108,7 @@
 		</div> 
 
 		<%= f.submit "Sign Up", class: "btn btn-primary btn-raised" %>
+
 	</fieldset>
 
 <% end %>
