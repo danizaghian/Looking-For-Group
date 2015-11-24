@@ -224,6 +224,10 @@ div.jumbotron.groups .btn-danger {
 	margin-bottom: 20px;
 }
 
+div.modal-header button.close {
+	float:right;
+}
+
 
 
 .img-bg {
