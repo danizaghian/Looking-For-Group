@@ -122,12 +122,14 @@
 				    </div><br><br>
 
 					<div class="checkbox">
-					<label class="control-label col-lg-3">Genres:</label>
+					<label id="genre-label" class="control-label col-lg-3">Genres:</label>
+						<div class = "col-lg-9">
 					    <% @allgenres.each do |genre| %>
 					     	<label>
 								<input type="checkbox" name="<%=genre.name%>" value="<%=genre.name%>"> <%=genre.name%>
 							</label>
 						<% end %>
+						</div>
 					</div> 
 
 					<%= f.submit "Update", class: "btn btn-primary" %>
