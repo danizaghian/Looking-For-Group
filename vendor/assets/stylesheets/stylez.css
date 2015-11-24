@@ -5,7 +5,12 @@
 
 #landing-card {
 	width: 500px;
-	left: 0;
+	padding-left: 30px;
+}
+
+div#landing-card.mdl-card.mdl-shadow--2dp {
+	background: rgba(255, 255, 255, 0.7);
+	border-radius: 10px;
 }
 
 #landing-text-header {
@@ -15,11 +20,29 @@
 
 #landing-text {
 	font-size: 80px;
+	color: #ecf0f1;
+}
+
+#landing-text-header h2 {
+	font-size: 36px;
+	color: #ecf0f1;
+}
+
+#login-but {
+	float: right;
+	margin-right: 30px;
 }
 
 
 #login-card .mdl-card__title {
-	background-color: #2980b9;
+	background-color: transparent;
+	color: black;
+}
+
+div#login.mdl-card.mdl-shadow--2dp {
+	background: rgba(255, 255, 255, 0.7);
+	border-radius: 10px;
+	height: 240px;
 }
 
 .mdl-layout__drawer {
@@ -44,7 +67,12 @@
   transition: all 0.2s ease-in-out;
 }
 
-#genre-card .demo-card-square.mdl-card {
+.list-image {
+	height:200px;
+	width: 200px;
+}
+
+.genre-card .demo-card-square.mdl-card {
 	width: 250px;
 	height: 250px;
 	margin: 20px;
@@ -56,7 +84,7 @@
 	display: table;
 }
 
-#genre-card .demo-card-square.mdl-card .mdl-card__title h2{
+.genre-card .demo-card-square.mdl-card .mdl-card__title h2{
 	font-size: 30px;
 }
 
@@ -113,6 +141,16 @@ div.jumbotron.groups {
 	background-color: #8e44ad;
 }
 
+div.jumbotron.inbox-jumbotron {
+	background-color: #f1c40f;
+}
+
+.fa-meh-o{
+	color: #f1c40f;
+	font-size: 70px;
+	text-align: center;
+}
+
 div.jumbotron.genres {
 	background-color: #3498db;
 }
@@ -121,6 +159,26 @@ div.jumbotron.games {
 	background-color: #e74c3c;
 }
 
+div.jumbotron.home {
+	background-color: #e67e22;
+}
+
+div.jumbotron.profile {
+	background-color: #34495e;
+}
+
+div.mdl-textfield {
+	margin-top: -70px;
+	float: right;
+}
+
+div.jumbotron.games.jumbotron-text{
+	margin-top: 100px;
+}
+
+div.jumbotron.genres.jumbotron-text{
+	margin-top: 50px;
+}
 
 .jumbotron-text {
 	margin-top:20px;
@@ -128,7 +186,7 @@ div.jumbotron.games {
 }
 
 /*jumbotron fab*/
-div.jumbotron button.fab {
+div.jumbotron.groups a button#fab {
 	top: -10px;
     right: 50px;
     float: right;
@@ -186,10 +244,10 @@ a.mdl-navigation__link.nav-link .fa {
 
 #nav a.mdl-navigation__link.nav-link {
 	font-size: 16px;
-
+	padding-left: 90px;
 }
 
-#group-info {
+#group-game-info {
 	margin-left: 20px;
 	font-size: 28px;
 }
@@ -203,14 +261,36 @@ div.jumbotron.groups .btn-info {
 	float: right;
 	margin-top: -10px;
 }
+
+div.jumbotron.profile .btn-info {
+	float: right;
+	margin-top: -10px;
+}
 div.jumbotron.groups .btn-danger {
 	float: right;
 	margin-top: -10px;
 }
 
+div.jumbotron.games span {
+	float:right;
+	font-size: 16px;
+}
+
+div.jumbotron.games .btn-icon {
+	margin-top: -5px;
+}
+
 .new-group-form {
 	margin-top: 20px;
 	margin-bottom: 20px;
+}
+
+div.modal-header button.close {
+	float:right;
+}
+
+#game-genres {
+	font-size: 16px;
 }
 
 

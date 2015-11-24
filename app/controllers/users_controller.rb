@@ -23,7 +23,7 @@ class UsersController < ApplicationController
     redirect_to @user
   else 
     flash[:error] = @user.errors.full_messages
-    redirect_to "/"
+    redirect_to root_path
   end
   end
 
