@@ -19,27 +19,27 @@
 			<div class="row">
 
 				<div class="col-xs-3">
-					<h3>Genres:</h3>
+					<h3>Genres</h3>
 						<% @user.genres.each do |genre| %>
 							<a href= "<%=genre_path(genre.slug)%>"><%= genre.name %></a><br>
 						<% end %>
 				</div>
 				<div class="col-xs-3">
-					<h3>Games:</h3>
+					<h3>Games</h3>
 						<% @user.games.each do |game| %>
 							<a href= "<%=game_path(game.slug)%>"><%= game.name %></a><br>
 						<% end %>
 				</div>
 
 				<div class="col-xs-3">
-					<h3>Groups:</h3>
+					<h3>Groups</h3>
 						<% @user.groups.each do |group| %>
 							<a href= "<%=group_path(group.slug)%>"><%= group.name %></a><br>
 						<% end %>
 				</div>
 
 				<div class="col-xs-3">
-				    <h3> About: </h3> <p><%=  @user.description %> </p>
+				    <h3> About</h3> <p><%=  @user.description %> </p>
 				</div>
 
 			</div>
