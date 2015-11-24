@@ -42,6 +42,7 @@ gem "less-rails"
 
 gem "twitter-bootstrap-rails"
 
+  gem 'spring'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
@@ -60,7 +61,6 @@ group :development do
   gem 'web-console', '~> 2.0'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
 end
 
 group :production do
