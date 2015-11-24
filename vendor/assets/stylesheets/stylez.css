@@ -3,6 +3,20 @@
 	background-size: cover;
 }
 
+#landing-card {
+	width: 500px;
+}
+
+#landing-text-header {
+	margin-left: 60px;
+	margin-top: 100px;
+}
+
+#landing-text {
+	font-size: 80px;
+}
+
+
 #login-card .mdl-card__title {
 	background-color: #2980b9;
 }
@@ -14,6 +28,12 @@
 
 .card-container {
 	display: inline-block;
+}
+
+#genre-label {
+	font-weight: bold;
+	color: black;
+	margin-left: -5px;
 }
 
 .demo-card-square.mdl-card {

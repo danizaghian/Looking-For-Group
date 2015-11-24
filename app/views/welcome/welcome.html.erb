@@ -11,7 +11,16 @@
 	</head>
 	<body id = "landing">
 
-		<div class="mdl-card mdl-shadow--2dp">
+  <div class = "container-fluid">
+	<div class ="row">
+
+	<div class = "col-xs-5" id = "landing-text-header">
+		<h1 id="landing-text">Looking For Group</h1>
+		<h1>A dynamic way to connect with like-minded adventurers.</h1>
+	</div>
+
+	<div class ="col-xs-5">
+		<div class="mdl-card mdl-shadow--2dp" id="landing-card">
 		  <div class="mdl-card__title">
 		    <h2 class="mdl-card__title-text">Sign Up</h2>
 		  </div>
@@ -86,11 +95,14 @@
 		
 
 		<div class="checkbox">
+		  <label id="genre-label" class="control-label col-xs-3">Genres:</label>
+		  	<div class = "col-xs-9">
 		    <% @genres.each do |genre| %>
 		     	<label>
 					<input type="checkbox" name="<%=genre.name%>" value="<%=genre.name%>"> <%=genre.name%>
 				</label>
 			<% end %>
+			</div>
 		</div> 
 
 		<%= f.submit "Sign Up", class: "btn btn-primary btn-raised" %>
@@ -101,6 +113,8 @@
 
 		  </div>
 		</div>
-
+	  </div>
+	</div>
+  </div>
 	</body>
 </html>
