@@ -35,7 +35,14 @@ div#landing-card.mdl-card.mdl-shadow--2dp {
 
 
 #login-card .mdl-card__title {
-	background-color: #2980b9;
+	background-color: transparent;
+	color: black;
+}
+
+div#login.mdl-card.mdl-shadow--2dp {
+	background: rgba(255, 255, 255, 0.7);
+	border-radius: 10px;
+	height: 240px;
 }
 
 .mdl-layout__drawer {
