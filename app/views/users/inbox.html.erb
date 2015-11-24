@@ -1,5 +1,11 @@
-<h1> Inbox!</h1>
+<a name="top"></a>
+<div class="jumbotron inbox-jumbotron">
+  <div class="jumbotron-text">INBOX</div>
+</div>
 
+<% if @user.mailbox.inbox.length == 0%>
+  <i class =" fa fa-meh-o fa-5x"><br>What is the worst thing about having no messages?<br><br><br>You also have no friends </i>
+<% end%>
 <div class="panel-group inbox" id="accordion" role="tablist" aria-multiselectable="true">
 <!-- Next idea: On read, send ajax request to mark message as read. Or something -->
 <% @user.mailbox.inbox.each do |inbox| %>
