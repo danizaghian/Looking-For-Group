@@ -196,9 +196,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bcrypt (~> 3.1.7)
+  bcrypt (~> 3.1.10)
   bootstrap-material-design
-  byebug
+  byebug (~> 8.2.0)
   coffee-rails (~> 4.1.0)
   friendly_id
   jbuilder (~> 2.0)
