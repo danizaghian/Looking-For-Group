@@ -28,6 +28,7 @@
 		      <a class="mdl-navigation__link nav-link" href="/games">Games <i class="fa fa-gamepad fa-lg"></i></a>
 		      <a class="mdl-navigation__link nav-link" href="/groups">Groups <i class="fa fa-group fa-lg"></i></a>
 		      <a class="mdl-navigation__link nav-link"  data-no-turbolink href="/genres">Genres <i class="fa fa-puzzle-piece fa-lg"></i></a>
+		      <a class="mdl-navigation__link nav-link" href="/users/<%= current_user.slug %>/inbox">Inbox</a>
 		       <a class="mdl-navigation__link nav-link" href="/about">About <i class="fa fa-rocket fa-lg"></i></a>
 		     <% if @current_user == nil %>
 		      <%= link_to "Log In", login_path, class: "mdl-navigation__link nav-link" %>
