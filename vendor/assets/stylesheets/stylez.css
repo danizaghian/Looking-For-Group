@@ -152,7 +152,7 @@ div.jumbotron.profile {
 }
 
 /*jumbotron fab*/
-div.jumbotron button.fab {
+div.jumbotron.groups a button#fab {
 	top: -10px;
     right: 50px;
     float: right;
