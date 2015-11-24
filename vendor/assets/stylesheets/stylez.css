@@ -137,6 +137,14 @@ div.jumbotron.games {
 	background-color: #e74c3c;
 }
 
+div.jumbotron.home {
+	background-color: #e67e22;
+}
+
+div.jumbotron.profile {
+	background-color: #34495e;
+}
+
 
 .jumbotron-text {
 	margin-top:20px;
@@ -216,6 +224,11 @@ a.mdl-navigation__link.nav-link .fa {
 }
 
 div.jumbotron.groups .btn-info {
+	float: right;
+	margin-top: -10px;
+}
+
+div.jumbotron.profile .btn-info {
 	float: right;
 	margin-top: -10px;
 }
