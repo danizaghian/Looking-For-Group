@@ -17,7 +17,7 @@
 			    <%= inbox.receipts[0].message.sender.username%>
 				<span>   -   </span>
 			    <%= inbox.receipts[0].message.subject %> 
-			    <%= inbox.receipts[0].message.created_at %> 
+			    <%= inbox.receipts[0].message.created_at.to_formatted_s(:long) %> 
       </h4>
     </div>
     	
@@ -40,11 +40,11 @@
   <label for="subject" class= "col-lg-3 control-label"> Subject </label>
   <input id = "subject"type="text" name="title" placeholder="Title" class="form-control" value = "RE: <%=inbox.receipts[0].message.subject%>"> <br>
   <label for="body" class="col-lg-3 control-label">Body</label>
-  <input id="body" type="text" name="content" placeholder="content" class="form-control">
+  <textarea id="body" rows="4" type="text" name="content" placeholder="Message!" class="form-control"></textarea><br>
   <input type="hidden" name="current" value = "<%= @current_user.id%>">
   <input type="hidden" name="reciever_id" value = "<%=inbox.receipts[0].message.sender.id%>">
   <input type="hidden" name="endLocation" value = "/users/<%=inbox.receipts[0].message.sender.id%>/inbox">
-  <input type="submit" role="button" value="Send!" >
+  <input type="submit" class = "btn btn-info" role="button" value="Send!" >
 </form>
      
       </div>
