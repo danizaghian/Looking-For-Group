@@ -141,7 +141,7 @@
 	<label for="subject" class= "col-lg-3 control-label"> Subject </label>
 	<input id = "subject"type="text" name="title" placeholder="Title" class="form-control"> <br>
 	<label for="body" class="col-lg-3 control-label">Body</label>
-	<textarea id="body" type="text" name="content" placeholder="content" class="form-control"></textarea>
+	<textarea id="body" type="text" rows="4" name="content" placeholder="Message!" class="form-control"></textarea>
 	<input type="hidden" name="current" value = "<%= @current_user.id%>">
 	<input type="hidden" name="reciever_id" value = "<%= @user.id%>">
 	<input type="hidden" name="endLocation" value = "/users/<%= @user.id%>">
