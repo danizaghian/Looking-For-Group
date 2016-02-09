@@ -257,16 +257,16 @@ a.mdl-navigation__link.nav-link .fa {
 	float: right;
 }
 
-div.jumbotron.groups .btn-info {
+div.jumbotron.groups .btn-dark {
 	float: right;
 	margin-top: -10px;
 }
 
-div.jumbotron.profile .btn-info {
+div.jumbotron.profile .btn-dark {
 	float: right;
 	margin-top: -10px;
 }
-div.jumbotron.groups .btn-danger {
+div.jumbotron.groups .btn-dark {
 	float: right;
 	margin-top: -10px;
 }
