@@ -2,7 +2,7 @@
 <html>
 	<head>
 	<%= bootstrap_flash %>
-	  <title>LfgApp</title>
+	  <title>Looking For Group</title>
 	  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -10,114 +10,280 @@
 	  <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
 	  <%= csrf_meta_tags %>
 	</head>
-	<body id = "landing">
 
-	<div class ="row">
+	<body>
 
-	<div class = "col-xs-5" id = "landing-text-header">
-		<h1 id="landing-text">Looking For Group</h1>
-		<h2>A dynamic way to connect with like-minded adventurers.</h2>
-	</div>
+	<!-- Header -->
+    <a id="login-button" class="btn btn-lg btn-dark" href="/login">Log In</a>
+    <header id="top" class="header">
+        <div class="text-vertical-center">
+            <h1>Looking For Group</h1>
+            <h2>A dynamic way to connect with like-minded adventurers.</h2>
 
-	<a id="login-but" href ="/login" class="btn btn-info">Log In</a>
+            <a href="#about" class="btn btn-dark btn-lg">Find Out More</a>
+        </div>
+    </header>
 
-	<div class ="col-xs-5 col-xs-offset-1" id="landing-card-div">
-		<div class="mdl-card mdl-shadow--2dp" id="landing-card">
-		  <div class="mdl-card__title">
+    <!-- About -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>A place for gamers to connect.</h2><br>
+                    <p class="lead">Finding people to game with has never been easier.<br> Choose your favorite genres and sign up to start your experience.</p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
 
-		    <h2 class="mdl-card__title-text">Sign Up</h2> 
-		  </div>
-		  <div class="mdl-card__supporting-text">
+
+	<!-- Services -->
+    <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-10 col-lg-offset-1">
+                    <h2>How to Start</h2>
+                    <div class="row">
+                        <div class="col-sm-4 col-xs-12">
+                            <div class="service-item">
+                                <img src="/images/signup.png">
+                                <h4>
+                                    <strong>Create your account</strong><br>
+                                </h4>
+                                <p>Signing up takes just a few simple steps! Choose your username and a few preferred genres to make an account.</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-xs-12">
+                            <div class="service-item">
+                                <img src="/images/group.png">
+                                <h4>
+                                    <strong>Join a group</strong><br>
+                                </h4>
+                                <p>Browse the vast selection of games and groups. Choose groups in your area to join, and reach out to the group leader.</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-xs-12">
+                            <div class="service-item">
+                                <img src="/images/meetup.png">
+                                <h4>
+                                    <strong>Meetup</strong><br>
+                                </h4>
+                                <p>Get together with your group at the designated location and start your grand adventure!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.row (nested) -->
+                    <a href="#portfolio" class="btn btn-dark btn-lg">Popular Games</a>
+                </div>
+                <!-- /.col-lg-10 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
 
 
-<%= form_for @user, class: "form-horizontal" do |f| %>
-	<fieldset>
+    <!-- Portfolio -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 text-center">
+                    <h2>Popular Games on LFG</h2>
+                    <hr class="small">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="portfolio-item">
+                                <a href="http://dnd.wizards.com/" target="_blank">
+                                    <img class="img-portfolio img-responsive" src="/images/dnd.jpg">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="portfolio-item">
+                                <a href="http://na.leagueoflegends.com/" target="_blank">
+                                    <img class="img-portfolio img-responsive" src="/images/lol.jpg">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="portfolio-item">
+                                <a href="http://www.smashbros.com/us/" target="_blank">
+                                    <img class="img-portfolio img-responsive" src="/images/ssb.jpeg">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="portfolio-item">
+                                <a href="http://streetfighter.com/" target="_blank">
+                                    <img class="img-portfolio img-responsive" src="/images/sf5.jpg">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.row (nested) -->
+                </div>
+                <!-- /.col-lg-10 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+
+    <!-- Call to Action -->
+    <aside class="call-to-action">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                	<div class = "row">
+                    	<h2>Ready to start your adventure?
+                    	<button type="button" class="btn btn-lg btn-dark" data-toggle="modal" data-target="#signup-modal">Sign Up</button></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <div class="modal fade" id="signup-modal" ng-controller="UsersIndexCtrl">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Sign Up</h4><br>
+                </div>
+                <div class="modal-body">
 	
-		<div class="form-group">
-		    <%= f.label :username , class: "col-lg-3 control-label" %>
-		    	<div class="col-lg-9">
-		    		<%= f.text_field :username, class: "form-control mdl-textfield__input" %>
-		    	</div>
-		</div><br><br>
-	
-		<div class="form-group">
-		    <%= f.label :first_name , class: "col-lg-3 control-label" %>
-		    <div class="col-lg-9">
-		    	<%= f.text_field :first_name, class: "form-control" %>
-		    </div>
-		</div><br><br>
-	
-		<div class="form-group">
-	    	<%= f.label :last_name , class: "col-lg-3 control-label" %>
-	    	<div class="col-lg-9">
-	    		<%= f.text_field :last_name, class: "form-control" %>
-	    	</div>
-	    </div><br><br>
+					<%= form_for @user, class: "form-horizontal" do |f| %>
+						<fieldset>
+						
+							<div class="form-group">
+							    <%= f.label :username , class: "col-lg-3 control-label" %>
+							    	<div class="col-lg-9">
+							    		<%= f.text_field :username, class: "form-control mdl-textfield__input" %>
+							    	</div>
+							</div><br><br>
+						
+							<div class="form-group">
+							    <%= f.label :first_name , class: "col-lg-3 control-label" %>
+							    <div class="col-lg-9">
+							    	<%= f.text_field :first_name, class: "form-control" %>
+							    </div>
+							</div><br><br>
+						
+							<div class="form-group">
+						    	<%= f.label :last_name , class: "col-lg-3 control-label" %>
+						    	<div class="col-lg-9">
+						    		<%= f.text_field :last_name, class: "form-control" %>
+						    	</div>
+						    </div><br><br>
 
-	    <div class="form-group">
-		    <%= f.label :password , class: "col-lg-3 control-label" %>
-		    	<div class="col-lg-9">
-		    		<%= f.password_field :password, class: "form-control" %>
-		    	</div>
-		    </div><br><br>
-	
-	    <div class="form-group">
-	    	<%= f.label :email , class: "col-lg-3 control-label" %>
-	    	<div class="col-lg-9">
-	    		<%= f.text_field :email, class: "form-control" %>
-	    	</div>
-	    </div><br><br>
-	
-	    <div class="form-group">
-	    	<%= f.label :city , class: "col-lg-3 control-label" %>
-	    	<div class="col-lg-9">
-	    		<%= f.text_field :city, class: "form-control" %>
-	    	</div>
-	    </div><br><br>
-	
-	    <div class="form-group">
-	    	<%= f.label :age , class: "col-lg-3 control-label" %>
-	    	<div class="col-lg-9">
-	    		<%= f.text_field :age, class: "form-control" %>
-	    	</div>
-	    </div><br><br>
-	
-	    <div class="form-group">
-	    	<%= f.label :description , class: "col-lg-3 control-label" %>
-	    	<div class="col-lg-9">
-	    		<%= f.text_area :description, class: "form-control" %>
-	    	</div>
-	    </div><br><br><br>
-	
-	    <div class="form-group">
-	    	<%= f.label :avatar, class: "col-lg-3 control-label" %>
-	    	<div class="col-lg-9">
-	        	<%= f.file_field :avatar %>
-	    	</div>
-	    </div><br><br>
-		
+						    <div class="form-group">
+							    <%= f.label :password , class: "col-lg-3 control-label" %>
+							    	<div class="col-lg-9">
+							    		<%= f.password_field :password, class: "form-control" %>
+							    	</div>
+							    </div><br><br>
+						
+						    <div class="form-group">
+						    	<%= f.label :email , class: "col-lg-3 control-label" %>
+						    	<div class="col-lg-9">
+						    		<%= f.text_field :email, class: "form-control" %>
+						    	</div>
+						    </div><br><br>
+						
+						    <div class="form-group">
+						    	<%= f.label :city , class: "col-lg-3 control-label" %>
+						    	<div class="col-lg-9">
+						    		<%= f.text_field :city, class: "form-control" %>
+						    	</div>
+						    </div><br><br>
+						
+						    <div class="form-group">
+						    	<%= f.label :age , class: "col-lg-3 control-label" %>
+						    	<div class="col-lg-9">
+						    		<%= f.text_field :age, class: "form-control" %>
+						    	</div>
+						    </div><br><br>
+						
+						    <div class="form-group">
+						    	<%= f.label :description , class: "col-lg-3 control-label" %>
+						    	<div class="col-lg-9">
+						    		<%= f.text_area :description, class: "form-control" %>
+						    	</div>
+						    </div><br><br><br>
+						
+						    <div class="form-group">
+						    	<%= f.label :avatar, class: "col-lg-3 control-label" %>
+						    	<div class="col-lg-9">
+						        	<%= f.file_field :avatar %>
+						    	</div>
+						    </div><br><br>
+							
 
-		<div class="checkbox">
-		  <label id="genre-label" class="control-label col-xs-3">Genres:</label>
-		  	<div class = "col-xs-9">
-		    <% @genres.each do |genre| %>
-		     	<label>
-					<input type="checkbox" name="<%=genre.name%>" value="<%=genre.name%>"> <%=genre.name%>
-				</label>
-			<% end %>
-			</div>
-		</div> 
+							<div class="checkbox">
+							  <label id="genre-label" class="control-label col-xs-3">Genres:</label>
+							  	<div class = "col-xs-9">
+							    <% @genres.each do |genre| %>
+							     	<label>
+										<input type="checkbox" name="<%=genre.name%>" value="<%=genre.name%>"> <%=genre.name%>
+									</label>
+								<% end %>
+								</div>
+							</div> 
 
-		<%= f.submit "Sign Up", class: "btn btn-primary btn-raised" %>
+							<%= f.submit "Sign Up", class: "btn btn-dark" %>
 
-	</fieldset>
+						</fieldset>
 
-<% end %>
+					<% end %>
+                 
+                </div>
+            </div>
+        </div>
+    </div>
 
-		  </div>
-		</div>
-	  </div>
-	</div>
-  </div>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 text-center">
+                    <h4><strong>Looking For Group</strong>
+                    </h4>
+                    <ul class="list-unstyled">
+                        <li>San Francisco, CA</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Custom Theme JavaScript -->
+    <script>
+
+    // Scrolls to the selected menu item on the page
+    $(function() {
+        $('a[href*=#]:not([href=#])').click(function() {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    $('html,body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    return false;
+                }
+            }
+        });
+    });
+    </script>
+
+
+
+
+
 	</body>
 </html>
