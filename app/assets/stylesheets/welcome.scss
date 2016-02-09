@@ -177,6 +177,23 @@ div.ng-scope {
         height: 75%;
     }
 }
+.allstars {
+    font-size: 35pt;
+    font-family: fantasy;
+}
+.about {
+    text-align: justify;
+    padding: 50px;
+    margin: 0 auto;
+    width: 70%;
+    background: rgba(50, 0, 0, .3);
+    border-radius: 20px;
+}
+.about p {
+    font-family: cursive;
+    line-height: 130%;
+    font-size: 20pt;
+}
 
 /* Footer */
 
